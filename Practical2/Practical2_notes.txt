@@ -1,0 +1,138 @@
+PRACTICAL 2 - RUNNING AND DEMONSTRATION NOTES
+
+The worksheet does not explicitly require a written report. It requires code and
+test data to be submitted, and the work must be demonstrated. The marker expects
+us to discuss performance, so these notes can be used when preparing a report or
+answering questions.
+
+SETUP
+
+From the Practical2 directory:
+
+cd /Users/ashfaq/Studies/COMP5008/Labs/Practical2
+source .venv/bin/activate
+
+No third-party package is required. The code uses Python's standard library only.
+
+Check syntax:
+
+python3 -m py_compile main.py factorial_fibonacci.py gcd.py number_conversion.py towers_of_hanoi.py
+
+RUN EVERYTHING
+
+python3 main.py
+
+main.py prints examples for Activities 1-4, then asks for the number of Hanoi
+disks. Enter 3 to see the seven moves for a three-disk problem.
+
+ACTIVITY 1: FACTORIAL AND FIBONACCI
+
+Functions are in factorial_fibonacci.py:
+
+factorial_iterative(n)
+factorial_recursive(n)
+fibonacci_iterative(n)
+fibonacci_recursive(n)
+
+Run individual examples:
+
+python3 -c "from factorial_fibonacci import factorial_iterative; print(factorial_iterative(5))"
+python3 -c "from factorial_fibonacci import factorial_recursive; print(factorial_recursive(5))"
+python3 -c "from factorial_fibonacci import fibonacci_iterative; print(fibonacci_iterative(10))"
+python3 -c "from factorial_fibonacci import fibonacci_recursive; print(fibonacci_recursive(10))"
+
+Expected results:
+
+5! = 120
+Fibonacci(10) = 55
+
+The iterative factorial and recursive factorial both take O(n) time. Recursive
+factorial also uses O(n) call-stack space.
+
+Iterative Fibonacci takes O(n) time and O(1) extra space. The direct recursive
+Fibonacci function recalculates the same values repeatedly, so it takes O(2^n)
+time and O(n) call-stack space.
+
+The main program measures increasing values of n from 5 to 30. Recursive
+Fibonacci becomes much slower as n increases.
+
+ACTIVITY 2: GREATEST COMMON DIVISOR
+
+Function:
+
+python3 -c "from gcd import gcd_recursive; print(gcd_recursive(48, 18))"
+
+Expected result:
+
+6
+
+The recursive Euclidean algorithm repeatedly replaces (a, b) with
+(b, a % b). When b becomes zero, a is the GCD. Its time complexity is
+O(log(min(a, b))) and its recursion depth is also logarithmic.
+
+ACTIVITY 3: NUMBER CONVERSION
+
+Function:
+
+python3 -c "from number_conversion import decimal_to_base; print(decimal_to_base(255, 2))"
+python3 -c "from number_conversion import decimal_to_base; print(decimal_to_base(255, 16))"
+
+Expected results:
+
+11111111
+FF
+
+The recursive conversion divides the decimal value by the target base. The
+remainder gives the current digit. The recursive result for the quotient is
+placed before that digit. Bases 2 through 16 are accepted. Its time and stack
+complexity are O(log_base(n)).
+
+ACTIVITY 4: EXCEPTIONS
+
+Activities 1-3 validate bad input and raise exceptions. main.py catches and
+prints the errors.
+
+Examples tested by main.py:
+
+factorial_recursive(-1)       -> ValueError
+gcd_recursive(0, 0)           -> ValueError
+decimal_to_base(10, 1)        -> ValueError
+
+The exceptions prevent invalid values from silently producing incorrect results.
+
+ACTIVITY 5: TOWERS OF HANOI
+
+Run the complete program:
+
+python3 main.py
+
+Enter 3 when prompted, or run the function directly:
+
+python3 -c "from towers_of_hanoi import towers; towers(3, 1, 3)"
+
+The recursive method:
+
+1. Moves n-1 disks from source to the temporary peg.
+2. Moves the largest disk from source to destination.
+3. Moves n-1 disks from the temporary peg to destination.
+
+The temporary peg is calculated as 6 - source - destination because the peg
+numbers are 1, 2, and 3. The base case is one disk, which calls move_disk.
+
+The number of moves is 2^n - 1. The time complexity is O(2^n), and recursion
+stack space is O(n). The output indentation shows the recursion level.
+
+DEMONSTRATION SUMMARY
+
+Factorial reduces n by one recursive step and has a single base case n=0.
+Fibonacci has base cases n=0 and n=1, but the direct recursive version has two
+recursive calls and repeated work.
+GCD reduces the problem using the remainder until the second value is zero.
+Base conversion repeatedly divides by the target base and uses remainders as
+digits.
+Hanoi solves two smaller n-1 problems around one disk move.
+
+No task-solving built-in functions are used. The algorithms use explicit loops,
+recursion, arithmetic, comparisons, and manual output. Basic input, print,
+integer parsing, exception handling, and timing are used only for the program
+interface and investigation.

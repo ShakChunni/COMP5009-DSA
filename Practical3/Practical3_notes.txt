@@ -1,0 +1,62 @@
+PRACTICAL 3 - RUNNING AND DEMONSTRATION NOTES
+
+SETUP
+
+From the Practical3 directory:
+
+cd /Users/ashfaq/Studies/COMP5008/Labs/Practical3
+source .venv/bin/activate
+
+
+RUNNING AND SHOWCASING EACH PROGRAM
+
+1. Showcase Full Practical 3 Demonstration:
+   python3 main.py
+   (Demonstrates Stack operations, Queue polymorphism with Shuffling vs Circular queues,
+    Infix-to-Postfix conversion, Postfix evaluation, and includes an interactive equation solver prompt)
+
+2. Showcase DSAStack Independently:
+   python3 DSAStack.py
+   (Demonstrates creating a stack, isEmpty checks, pushing, top/peek, pop, and display)
+
+3. Showcase DSAQueue Independently:
+   python3 DSAQueue.py
+   (Demonstrates ShufflingQueue shifts, CircularQueue wrap-around, and FIFO operations)
+
+4. Showcase EquationSolver Independently:
+   python3 EquationSolver.py
+   (Demonstrates Infix-to-Postfix conversions and evaluation for all worksheet examples)
+
+
+ACTIVITY 1: DSAStack (Array-based Stack)
+- Backing structure: Fixed-size NumPy array with dtype=object.
+- Count tracking: Integer field self._count indicates current number of elements.
+- LIFO (Last In, First Out) ordering.
+- Methods:
+  * getCount() -> Returns self._count (O(1))
+  * isEmpty() -> True if count == 0 (O(1))
+  * isFull() -> True if count == capacity (O(1))
+  * push(value) -> Adds element at index [count], increments count (O(1))
+  * pop() -> Decrements count, removes and returns top item (O(1))
+  * top() / peek() -> Returns item at index [count - 1] without removing (O(1))
+
+
+ACTIVITY 1 & 2: DSAQueue (Shuffling vs Circular Queues & Polymorphism)
+- Base Class: DSAQueue (Abstract parent class)
+- Subclasses:
+  1. DSAShufflingQueue:
+     * Enqueue: Adds to rear at index [count] (O(1))
+     * Dequeue: Takes front item at index [0], manually shifts remaining elements left by 1 (O(N) time)
+  2. DSACircularQueue:
+     * Uses _front and _rear pointers with modulo arithmetic (% capacity).
+     * Enqueue: Adds at _rear, _rear = (_rear + 1) % capacity (O(1) time)
+     * Dequeue: Takes from _front, _front = (_front + 1) % capacity (O(1) time)
+     * Efficient memory reuse and no element shifting needed.
+
+
+ACTIVITY 3: Equation Solver (Infix to Postfix & Postfix Evaluation)
+- solve(equation, queue_class=DSACircularQueue): Orchestrates parsing and evaluation.
+- _parseInfixToPostfix(equation): Converts infix to postfix using operator stack & postfix queue.
+- _evaluatePostfix(postfixQueue): Evaluates postfix queue using operand stack.
+- _precedenceOf(theOp): Returns operator precedence (+/- = 1, */ / = 2).
+- _executeOperation(op, op1, op2): Evaluates op1 <op> op2.

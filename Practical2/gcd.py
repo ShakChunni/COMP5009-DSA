@@ -1,6 +1,3 @@
-# Reference: https://en.wikipedia.org/wiki/Euclidean_algorithm
-
-
 def _validate_integer(value, name):
     if type(value) is not int:
         raise TypeError(name + " must be an integer")

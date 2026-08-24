@@ -1,5 +1,3 @@
-# Reference: https://en.wikipedia.org/wiki/Positional_notation#Base_conversion
-
 DIGITS = "0123456789ABCDEF"
 
 

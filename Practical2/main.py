@@ -28,6 +28,8 @@ def run_factorial_fibonacci_examples():
     test_value = 5
 
     while test_value <= 30:
+        _, factorial_iterative_time = _time_call(
+            factorial_iterative, test_value)
         _, factorial_recursive_time = _time_call(
             factorial_recursive, test_value)
         _, fibonacci_iterative_time = _time_call(
@@ -36,6 +38,7 @@ def run_factorial_fibonacci_examples():
             fibonacci_recursive, test_value)
 
         print("n=", test_value,
+              "factorial iterative seconds=", factorial_iterative_time,
               "factorial recursive seconds=", factorial_recursive_time,
               "Fibonacci iterative seconds=", fibonacci_iterative_time,
               "Fibonacci recursive seconds=", fibonacci_recursive_time)

@@ -110,9 +110,9 @@ def run_interactive_solver():
 def main():
     try:
         run_stack_demonstration()
-        run_queue_demonstration()
-        run_equation_solver_demonstration()
-        run_interactive_solver()
+       # run_queue_demonstration()
+       # run_equation_solver_demonstration()
+       # run_interactive_solver()
     except Exception as error:
         print(f"Demonstration encountered error: {error}")
 

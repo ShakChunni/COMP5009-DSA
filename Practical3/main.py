@@ -48,9 +48,9 @@ def demonstrate_equation_solver():
 
 def main():
     demonstrate_stack()
-    demonstrate_shuffling_queue()
-    demonstrate_circular_queue()
-    demonstrate_equation_solver()
+    #demonstrate_shuffling_queue()
+    #demonstrate_circular_queue()
+    #demonstrate_equation_solver()
 
 
 if __name__ == "__main__":

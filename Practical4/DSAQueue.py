@@ -19,17 +19,3 @@ class DSAQueue:
 
     def __str__(self):
         return str(self._list)
-
-
-if __name__ == "__main__":
-    print("=== Testing DSAQueue (LinkedList-backed) ===")
-    queue = DSAQueue()
-    print("Initial isEmpty():", queue.isEmpty())
-
-    queue.enqueue("Task 1")
-    queue.enqueue("Task 2")
-    queue.enqueue("Task 3")
-    print("Queue:", queue)
-    print("peek():", queue.peek())
-    print("dequeue():", queue.dequeue())
-    print("Queue after dequeue:", queue)

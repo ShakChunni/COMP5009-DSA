@@ -8,28 +8,19 @@ cd /Users/ashfaq/Studies/COMP5008/Labs/Practical4
 source .venv/bin/activate
 
 
-RUNNING AND SHOWCASING EACH PROGRAM
+RUNNING THE MAIN DRIVER
 
-1. Interactive Menu & Full Demonstration:
-   python3 main.py
-   (Provides interactive menu to insert/remove/peek from both ends of the list and test Stack/Queue)
+python3 main.py
 
-2. Showcase DSALinkedList Independently:
-   python3 DSALinkedList.py
-   (Demonstrates insertFirst, insertLast, peekFirst, peekLast, removeFirst, removeLast)
-
-3. Showcase LinkedList-backed DSAStack Independently:
-   python3 DSAStack.py
-   (Demonstrates LIFO push, pop, top using linked list)
-
-4. Showcase LinkedList-backed DSAQueue Independently:
-   python3 DSAQueue.py
-   (Demonstrates FIFO enqueue, dequeue, peek using linked list)
+The main driver program provides an interactive, menu-driven interface to explore:
+1. Linked List operations (InsertFirst, InsertLast, RemoveFirst, RemoveLast, PeekFirst, PeekLast, Display)
+2. Stack operations backed by Linked List (Push, Pop, Top, Display)
+3. Queue operations backed by Linked List (Enqueue, Dequeue, Peek, Display)
 
 
 ACTIVITY 1: DSALinkedList (Doubly-Linked, Double-Ended)
-- Node class: DSAListNode with value, next, and prev references.
-- List class: DSALinkedList maintains both head and tail pointers.
+- Node class: DSAListNode storing value, next, and prev pointers.
+- List class: DSALinkedList maintaining head and tail pointers.
 - Operations:
   * insertFirst(value): O(1) time
   * insertLast(value): O(1) time
@@ -38,20 +29,20 @@ ACTIVITY 1: DSALinkedList (Doubly-Linked, Double-Ended)
   * removeFirst(): O(1) time
   * removeLast(): O(1) time
 - Edge cases handled:
-  * Empty list checks (raises IndexError on remove/peek)
-  * Single-item list (updating both head and tail to None on remove)
-  * Multi-item list (updating adjacent prev/next pointers)
+  * Empty list: raises IndexError on remove/peek.
+  * Single-item list: resets head and tail to None on removal.
+  * Multi-item list: preserves forward and backward pointer links.
 
 
 ACTIVITY 2: DSAStack & DSAQueue using DSALinkedList
 - DSAStack:
-  * push(value) -> insertFirst(value) (O(1))
-  * pop() -> removeFirst() (O(1))
-  * top() -> peekFirst() (O(1))
-  * isEmpty() -> list.isEmpty() (O(1))
+  * push(value) -> calls insertFirst(value) (O(1))
+  * pop() -> calls removeFirst() (O(1))
+  * top() / peek() -> calls peekFirst() (O(1))
+  * isEmpty() -> calls isEmpty() (O(1))
 - DSAQueue:
-  * enqueue(value) -> insertLast(value) (O(1))
-  * dequeue() -> removeFirst() (O(1))
-  * peek() -> peekFirst() (O(1))
-  * isEmpty() -> list.isEmpty() (O(1))
-  * Replaces array shuffling (O(N)) and circular modulo math with natural O(1) node pointer operations.
+  * enqueue(value) -> calls insertLast(value) (O(1))
+  * dequeue() -> calls removeFirst() (O(1))
+  * peek() -> calls peekFirst() (O(1))
+  * isEmpty() -> calls isEmpty() (O(1))
+  * Both enqueue and dequeue operate in O(1) time without array shifting.

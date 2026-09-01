@@ -100,23 +100,3 @@ class DSALinkedList:
             first = False
             currNd = currNd.getNext()
         return result + "]"
-
-
-if __name__ == "__main__":
-    print("=== Testing DSALinkedList ===")
-    ll = DSALinkedList()
-    print("Initial isEmpty():", ll.isEmpty())
-
-    ll.insertFirst("B")
-    ll.insertFirst("A")
-    ll.insertLast("C")
-    print("List after insertions:", ll)
-    print("peekFirst():", ll.peekFirst())
-    print("peekLast():", ll.peekLast())
-
-    print("removeFirst():", ll.removeFirst())
-    print("removeLast():", ll.removeLast())
-    print("List now:", ll)
-
-    print("removeLast():", ll.removeLast())
-    print("Final isEmpty():", ll.isEmpty())

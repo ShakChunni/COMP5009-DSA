@@ -78,15 +78,12 @@ def _parseInfixToPostfix(equation, queue_class=DSACircularQueue):
         if token == '(':
             operator_stack.push(token)
         elif token == ')':
-            found_open = False
-            while not operator_stack.isEmpty():
-                operator = operator_stack.pop()
-                if operator == '(':
-                    found_open = True
-                    break
-                postfix_queue.enqueue(operator)
-            if not found_open:
+            while (not operator_stack.isEmpty() and
+                   operator_stack.top() != '('):
+                postfix_queue.enqueue(operator_stack.pop())
+            if operator_stack.isEmpty():
                 raise ValueError("Mismatched brackets")
+            operator_stack.pop()
         elif (token == '+' or token == '-' or token == '*' or token == '/'):
             while (not operator_stack.isEmpty() and
                    operator_stack.top() != '(' and

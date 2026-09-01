@@ -39,7 +39,7 @@ def demonstrate_circular_queue():
 
 def demonstrate_equation_solver():
     print("\nActivity 3: Equation Solver")
-    equation = "( 4.6 + 2 ) * 3"
+    equation = "( 10.3 * (14 + 3.2)) / (5 + 2 - 4 * 3)"
     postfix_queue = _parseInfixToPostfix(equation)
     print("Infix:", equation)
     print("Postfix:", postfix_queue)
@@ -47,9 +47,9 @@ def demonstrate_equation_solver():
 
 
 def main():
-    #demonstrate_stack()
-    #demonstrate_shuffling_queue()
-    #demonstrate_circular_queue()
+    demonstrate_stack()
+    demonstrate_shuffling_queue()
+    demonstrate_circular_queue()
     demonstrate_equation_solver()
 
 

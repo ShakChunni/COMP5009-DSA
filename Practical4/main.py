@@ -45,54 +45,54 @@ def display_queue_menu():
 
 
 def handle_linked_list_menu():
-    ll = DSALinkedList()
-    ll_running = True
+    linked_list = DSALinkedList()
+    linked_list_menu_running = True
 
-    while ll_running:
+    while linked_list_menu_running:
         display_linked_list_menu()
-        choice = input("Enter choice: ").strip()
+        list_menu_choice = input("Enter choice: ").strip()
 
-        if choice == "1":
-            val = input("Enter value to insert at first: ")
-            ll.insertFirst(val)
-            print("Inserted at first:", val)
+        if list_menu_choice == "1":
+            value_to_insert = input("Enter value to insert at first: ")
+            linked_list.insertFirst(value_to_insert)
+            print("Inserted at first:", value_to_insert)
 
-        elif choice == "2":
-            val = input("Enter value to insert at last: ")
-            ll.insertLast(val)
-            print("Inserted at last:", val)
+        elif list_menu_choice == "2":
+            value_to_insert = input("Enter value to insert at last: ")
+            linked_list.insertLast(value_to_insert)
+            print("Inserted at last:", value_to_insert)
 
-        elif choice == "3":
+        elif list_menu_choice == "3":
             try:
-                val = ll.removeFirst()
-                print("Removed first value:", val)
-            except IndexError as e:
-                print("Error:", e)
+                removed_value = linked_list.removeFirst()
+                print("Removed first value:", removed_value)
+            except IndexError as error:
+                print("Error:", error)
 
-        elif choice == "4":
+        elif list_menu_choice == "4":
             try:
-                val = ll.removeLast()
-                print("Removed last value:", val)
-            except IndexError as e:
-                print("Error:", e)
+                removed_value = linked_list.removeLast()
+                print("Removed last value:", removed_value)
+            except IndexError as error:
+                print("Error:", error)
 
-        elif choice == "5":
+        elif list_menu_choice == "5":
             try:
-                print("Peek first:", ll.peekFirst())
-            except IndexError as e:
-                print("Error:", e)
+                print("Peek first:", linked_list.peekFirst())
+            except IndexError as error:
+                print("Error:", error)
 
-        elif choice == "6":
+        elif list_menu_choice == "6":
             try:
-                print("Peek last:", ll.peekLast())
-            except IndexError as e:
-                print("Error:", e)
+                print("Peek last:", linked_list.peekLast())
+            except IndexError as error:
+                print("Error:", error)
 
-        elif choice == "7":
-            print("Current List:", ll)
+        elif list_menu_choice == "7":
+            print("Current List:", linked_list)
 
-        elif choice == "0":
-            ll_running = False
+        elif list_menu_choice == "0":
+            linked_list_menu_running = False
 
         else:
             print("Invalid choice, please select an option from the menu.")
@@ -100,35 +100,35 @@ def handle_linked_list_menu():
 
 def handle_stack_menu():
     stack = DSAStack()
-    stack_running = True
+    stack_menu_running = True
 
-    while stack_running:
+    while stack_menu_running:
         display_stack_menu()
-        choice = input("Enter choice: ").strip()
+        stack_menu_choice = input("Enter choice: ").strip()
 
-        if choice == "1":
-            val = input("Enter value to push: ")
-            stack.push(val)
-            print("Pushed to stack:", val)
+        if stack_menu_choice == "1":
+            value_to_push = input("Enter value to push: ")
+            stack.push(value_to_push)
+            print("Pushed to stack:", value_to_push)
 
-        elif choice == "2":
+        elif stack_menu_choice == "2":
             try:
-                val = stack.pop()
-                print("Popped value:", val)
-            except IndexError as e:
-                print("Error:", e)
+                popped_value = stack.pop()
+                print("Popped value:", popped_value)
+            except IndexError as error:
+                print("Error:", error)
 
-        elif choice == "3":
+        elif stack_menu_choice == "3":
             try:
                 print("Top value:", stack.top())
-            except IndexError as e:
-                print("Error:", e)
+            except IndexError as error:
+                print("Error:", error)
 
-        elif choice == "4":
+        elif stack_menu_choice == "4":
             print("Current Stack (top -> bottom):", stack)
 
-        elif choice == "0":
-            stack_running = False
+        elif stack_menu_choice == "0":
+            stack_menu_running = False
 
         else:
             print("Invalid choice, please select an option from the menu.")
@@ -136,59 +136,59 @@ def handle_stack_menu():
 
 def handle_queue_menu():
     queue = DSAQueue()
-    queue_running = True
+    queue_menu_running = True
 
-    while queue_running:
+    while queue_menu_running:
         display_queue_menu()
-        choice = input("Enter choice: ").strip()
+        queue_menu_choice = input("Enter choice: ").strip()
 
-        if choice == "1":
-            val = input("Enter value to enqueue: ")
-            queue.enqueue(val)
-            print("Enqueued to queue:", val)
+        if queue_menu_choice == "1":
+            value_to_enqueue = input("Enter value to enqueue: ")
+            queue.enqueue(value_to_enqueue)
+            print("Enqueued to queue:", value_to_enqueue)
 
-        elif choice == "2":
+        elif queue_menu_choice == "2":
             try:
-                val = queue.dequeue()
-                print("Dequeued value:", val)
-            except IndexError as e:
-                print("Error:", e)
+                dequeued_value = queue.dequeue()
+                print("Dequeued value:", dequeued_value)
+            except IndexError as error:
+                print("Error:", error)
 
-        elif choice == "3":
+        elif queue_menu_choice == "3":
             try:
                 print("Peek value:", queue.peek())
-            except IndexError as e:
-                print("Error:", e)
+            except IndexError as error:
+                print("Error:", error)
 
-        elif choice == "4":
+        elif queue_menu_choice == "4":
             print("Current Queue (front -> rear):", queue)
 
-        elif choice == "0":
-            queue_running = False
+        elif queue_menu_choice == "0":
+            queue_menu_running = False
 
         else:
             print("Invalid choice, please select an option from the menu.")
 
 
 def main():
-    running = True
+    main_menu_running = True
 
-    while running:
+    while main_menu_running:
         display_main_menu()
-        choice = input("Enter choice: ").strip()
+        main_menu_choice = input("Enter choice: ").strip()
 
-        if choice == "1":
+        if main_menu_choice == "1":
             handle_linked_list_menu()
 
-        elif choice == "2":
+        elif main_menu_choice == "2":
             handle_stack_menu()
 
-        elif choice == "3":
+        elif main_menu_choice == "3":
             handle_queue_menu()
 
-        elif choice == "0":
+        elif main_menu_choice == "0":
             print("Exiting application...")
-            running = False
+            main_menu_running = False
 
         else:
             print("Invalid choice, please select an option from the menu.")

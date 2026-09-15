@@ -1,0 +1,46 @@
+PRACTICAL 5 - RUNNING AND DEMONSTRATION NOTES
+
+SETUP
+
+From the Practical5 directory:
+
+cd /Users/ashfaq/Studies/COMP5008/Labs/Practical5
+source .venv/bin/activate
+
+
+RUNNING THE MAIN PROGRAM
+
+python3 main.py
+
+The main driver program provides an interactive, menu-driven interface to explore:
+1. Add Node (Insert) - adds unique keys and values recursively.
+2. Delete Node - deletes nodes recursively handling 0 children, 1 child, and 2 children via in-order successor promotion.
+3. Find Node - searches the tree recursively in O(log N) average time.
+4. Display Tree (Traversals) - exports in-order, pre-order, and post-order traversals to a DSAQueue.
+5. Tree Height - calculates maximum path length from root to leaf recursively.
+6. Min & Max Keys - finds the leftmost and rightmost keys.
+7. Tree Balance Score - computes tree balance percentage (100% represents a complete binary search tree).
+8. Load Sample Tree - loads the worked example from lecture slides: [50, 16, 7, 89, 70, 45, 10, 66, 95].
+
+
+ACTIVITY 1: DSATreeNode & DSABinarySearchTree
+- Node class: DSATreeNode storing _key, _value, _left, and _right.
+- Tree class: DSABinarySearchTree maintaining _root and _count.
+- Core recursive operations:
+  * find(key): O(log N) average / O(N) worst case.
+  * insert(key, value): O(log N) average / O(N) worst case. Prevents duplicates.
+  * delete(key): O(log N) average / O(N) worst case. Uses _promoteSuccessor for 2-child deletions.
+
+
+ACTIVITY 2: Additional Methods
+- min(): Traverses left branch to find the smallest key (O(log N) average).
+- max(): Traverses right branch to find the largest key (O(log N) average).
+- height(): Returns -1 for empty tree, 0 for single root, and 1 + max(leftHt, rightHt) recursively.
+- balance(): Computes (actual_nodes / max_nodes_for_height) * 100. Returns 100% for complete trees.
+
+
+ACTIVITY 3: Traversals
+- inorder(): Left -> Node -> Right. Recovers sorted key sequence.
+- preorder(): Node -> Left -> Right. Useful for saving/recreating original tree hierarchy.
+- postorder(): Left -> Right -> Node. Evaluates bottom-up (children before parents).
+- All traversals populate a DSAQueue, which displays formatted sequence of keys.

@@ -54,7 +54,7 @@ def handle_traversals(tree):
 
 
 def load_sample_tree(tree):
-    sample_keys = [50, 16, 7, 89, 70, 45, 10, 66, 95]
+    sample_keys = [10, 8, 15, 4, 9, 1, 14, 12, 22, 19, 18, 17, 20, 25, 30]
     index = 0
     while index < len(sample_keys):
         key = sample_keys[index]

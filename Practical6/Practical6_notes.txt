@@ -1,0 +1,118 @@
+PRACTICAL 6 - RUNNING AND DEMONSTRATION NOTES
+
+SETUP
+
+From the Practical6 directory:
+
+cd /Users/ashfaq/Studies/COMP5008/Labs/Practical6
+source .venv/bin/activate
+
+
+RUNNING THE MAIN PROGRAM
+
+python3 main.py
+
+The main driver provides an interactive menu supporting:
+1. Add Node (Vertex)
+2. Delete Node (Vertex)
+3. Add Edge
+4. Delete Edge
+5. Display as Adjacency List
+6. Display as Adjacency Matrix
+7. Breadth First Search (BFS)
+8. Depth First Search (DFS)
+9. Load Sample Graph 1 (Activity 2)
+10. Load Sample Graph 2 (Activity 2)
+0. Exit
+
+
+ACTIVITY 1: DSAGraph and DSAGraphNode
+- DSAGraphNode stores:
+  * _label: string identifier
+  * _value: data payload
+  * _adjacent: DSALinkedList storing neighboring DSAGraphNode references in alphabetical order
+  * _visited: boolean flag
+- DSAGraph stores:
+  * _vertices: DSALinkedList of DSAGraphNode objects in alphabetical order
+  * _count: total vertices
+  * _edge_count: total edges
+- Representations:
+  * displayAsList(): Formatted adjacency list representation.
+  * displayAsMatrix(): 2D grid representation (1 for connected edge, 0 otherwise).
+
+
+ACTIVITY 2 & 3: MANUAL AND PROGRAMMATIC BFS / DFS TRACES
+
+============================================================
+GRAPH 1 (7 Vertices, 9 Edges)
+============================================================
+Vertices: A, B, C, D, E, F, G
+Edges: (A, B), (A, C), (A, D), (B, E), (C, D), (D, F), (E, F), (E, G), (F, G)
+
+Adjacency List (Alphabetical Order):
+A | B, C, D
+B | A, E
+C | A, D
+D | A, C, F
+E | B, F, G
+F | D, E, G
+G | E, F
+
+1. BFS Trace from 'A':
+   - Initialize Queue Q = [A], Visited = {A}, Tree Edges T = []
+   - Dequeue A: unvisited neighbors B, C, D -> Enqueue B, C, D.
+     Edges: (A -> B), (A -> C), (A -> D). Q = [B, C, D]
+   - Dequeue B: unvisited neighbor E -> Enqueue E.
+     Edge: (B -> E). Q = [C, D, E]
+   - Dequeue C: adjacent A, D already visited. Q = [D, E]
+   - Dequeue D: unvisited neighbor F -> Enqueue F.
+     Edge: (D -> F). Q = [E, F]
+   - Dequeue E: unvisited neighbor G -> Enqueue G.
+     Edge: (E -> G). Q = [F, G]
+   - Dequeue F: all neighbors visited. Q = [G]
+   - Dequeue G: all neighbors visited. Q = []
+   BFS Result: (A -> B), (A -> C), (A -> D), (B -> E), (D -> F), (E -> G)
+
+2. DFS Trace from 'A':
+   - Stack S = [A], Visited = {A}
+   - From A -> B (push B, S = [A, B], Edge: A -> B)
+   - From B -> E (push E, S = [A, B, E], Edge: B -> E)
+   - From E -> F (push F, S = [A, B, E, F], Edge: E -> F)
+   - From F -> D (push D, S = [A, B, E, F, D], Edge: F -> D)
+   - From D -> C (push C, S = [A, B, E, F, D, C], Edge: D -> C)
+   - At C: no unvisited neighbors -> backtrack to D -> backtrack to F
+   - At F -> G (push G, S = [A, B, E, F, G], Edge: F -> G)
+   - At G: no unvisited neighbors -> backtrack to F -> E -> B -> A.
+   DFS Result: (A -> B), (B -> E), (E -> F), (F -> D), (D -> C), (F -> G)
+
+
+============================================================
+GRAPH 2 (10 Vertices, 15 Edges)
+============================================================
+Vertices: A, B, C, D, E, F, G, H, I, J
+Edges:
+(A, B), (A, C), (A, D),
+(B, E),
+(C, F),
+(D, E), (D, F), (D, H),
+(E, G),
+(F, I),
+(G, H), (G, J),
+(H, I), (H, J),
+(I, J)
+
+1. BFS Result from 'A':
+   (A -> B), (A -> C), (A -> D), (B -> E), (C -> F), (D -> H), (E -> G), (F -> I), (H -> J)
+
+2. DFS Result from 'A':
+   (A -> B), (B -> E), (E -> D), (D -> F), (F -> C), (F -> I), (I -> H), (H -> G), (G -> J)
+
+
+TIME AND SPACE COMPLEXITY
+- Adjacency List:
+  * Space: O(V + E)
+  * Edge addition: O(deg(V)) (alphabetical insertion)
+  * BFS / DFS Traversal: O(V + E)
+- Adjacency Matrix:
+  * Space: O(V^2)
+  * Edge lookup: O(1)

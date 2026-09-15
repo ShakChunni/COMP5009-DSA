@@ -1,26 +1,26 @@
 class DSAListNode:
-    def __init__(self, inValue):
-        self.value = inValue
+    def __init__(self, value):
+        self.value = value
         self.next = None
         self.prev = None
 
     def getValue(self):
         return self.value
 
-    def setValue(self, inValue):
-        self.value = inValue
+    def setValue(self, value):
+        self.value = value
 
     def getNext(self):
         return self.next
 
-    def setNext(self, newNext):
-        self.next = newNext
+    def setNext(self, new_next):
+        self.next = new_next
 
     def getPrev(self):
         return self.prev
 
-    def setPrev(self, newPrev):
-        self.prev = newPrev
+    def setPrev(self, new_prev):
+        self.prev = new_prev
 
 
 class DSALinkedList:
@@ -31,25 +31,25 @@ class DSALinkedList:
     def isEmpty(self):
         return self.head is None
 
-    def insertFirst(self, newValue):
-        newNd = DSAListNode(newValue)
+    def insertFirst(self, new_value):
+        new_node = DSAListNode(new_value)
         if self.isEmpty():
-            self.head = newNd
-            self.tail = newNd
+            self.head = new_node
+            self.tail = new_node
         else:
-            newNd.setNext(self.head)
-            self.head.setPrev(newNd)
-            self.head = newNd
+            new_node.setNext(self.head)
+            self.head.setPrev(new_node)
+            self.head = new_node
 
-    def insertLast(self, newValue):
-        newNd = DSAListNode(newValue)
+    def insertLast(self, new_value):
+        new_node = DSAListNode(new_value)
         if self.isEmpty():
-            self.head = newNd
-            self.tail = newNd
+            self.head = new_node
+            self.tail = new_node
         else:
-            newNd.setPrev(self.tail)
-            self.tail.setNext(newNd)
-            self.tail = newNd
+            new_node.setPrev(self.tail)
+            self.tail.setNext(new_node)
+            self.tail = new_node
 
     def peekFirst(self):
         if self.isEmpty():
@@ -65,7 +65,7 @@ class DSALinkedList:
         if self.isEmpty():
             raise IndexError("List is empty")
 
-        nodeValue = self.head.getValue()
+        node_value = self.head.getValue()
         if self.head == self.tail:
             self.head = None
             self.tail = None
@@ -73,13 +73,13 @@ class DSALinkedList:
             self.head = self.head.getNext()
             self.head.setPrev(None)
 
-        return nodeValue
+        return node_value
 
     def removeLast(self):
         if self.isEmpty():
             raise IndexError("List is empty")
 
-        nodeValue = self.tail.getValue()
+        node_value = self.tail.getValue()
         if self.head == self.tail:
             self.head = None
             self.tail = None
@@ -87,16 +87,16 @@ class DSALinkedList:
             self.tail = self.tail.getPrev()
             self.tail.setNext(None)
 
-        return nodeValue
+        return node_value
 
     def __str__(self):
         result = "["
-        currNd = self.head
-        first = True
-        while currNd is not None:
-            if not first:
+        current_node = self.head
+        is_first = True
+        while current_node is not None:
+            if not is_first:
                 result += ", "
-            result += str(currNd.getValue())
-            first = False
-            currNd = currNd.getNext()
+            result += str(current_node.getValue())
+            is_first = False
+            current_node = current_node.getNext()
         return result + "]"

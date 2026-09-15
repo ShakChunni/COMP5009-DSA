@@ -16,71 +16,71 @@ class DSABinarySearchTree:
     def find(self, key):
         return self._findRec(key, self._root)
 
-    def _findRec(self, key, cur):
+    def _findRec(self, key, current_node):
         value = None
-        if cur is None:
+        if current_node is None:
             raise KeyError("Key " + str(key) + " not found")
-        elif key == cur.getKey():
-            value = cur.getValue()
-        elif key < cur.getKey():
-            value = self._findRec(key, cur.getLeft())
+        elif key == current_node.getKey():
+            value = current_node.getValue()
+        elif key < current_node.getKey():
+            value = self._findRec(key, current_node.getLeft())
         else:
-            value = self._findRec(key, cur.getRight())
+            value = self._findRec(key, current_node.getRight())
         return value
 
     def insert(self, key, value):
         self._root = self._insertRec(key, value, self._root)
         self._count += 1
 
-    def _insertRec(self, key, value, cur):
-        updateNode = cur
-        if cur is None:
-            updateNode = DSATreeNode(key, value)
-        elif key == cur.getKey():
+    def _insertRec(self, key, value, current_node):
+        update_node = current_node
+        if current_node is None:
+            update_node = DSATreeNode(key, value)
+        elif key == current_node.getKey():
             raise ValueError("Duplicate key: " + str(key))
-        elif key < cur.getKey():
-            cur.setLeft(self._insertRec(key, value, cur.getLeft()))
+        elif key < current_node.getKey():
+            current_node.setLeft(self._insertRec(key, value, current_node.getLeft()))
         else:
-            cur.setRight(self._insertRec(key, value, cur.getRight()))
-        return updateNode
+            current_node.setRight(self._insertRec(key, value, current_node.getRight()))
+        return update_node
 
     def delete(self, key):
         self._root = self._deleteRec(key, self._root)
         self._count -= 1
 
-    def _deleteRec(self, key, cur):
-        updateNode = cur
-        if cur is None:
+    def _deleteRec(self, key, current_node):
+        update_node = current_node
+        if current_node is None:
             raise KeyError("Key " + str(key) + " not found")
-        elif key == cur.getKey():
-            updateNode = self._deleteNode(cur)
-        elif key < cur.getKey():
-            cur.setLeft(self._deleteRec(key, cur.getLeft()))
+        elif key == current_node.getKey():
+            update_node = self._deleteNode(current_node)
+        elif key < current_node.getKey():
+            current_node.setLeft(self._deleteRec(key, current_node.getLeft()))
         else:
-            cur.setRight(self._deleteRec(key, cur.getRight()))
-        return updateNode
+            current_node.setRight(self._deleteRec(key, current_node.getRight()))
+        return update_node
 
-    def _deleteNode(self, delNode):
-        updateNode = None
-        if delNode.getLeft() is None and delNode.getRight() is None:
-            updateNode = None
-        elif delNode.getLeft() is not None and delNode.getRight() is None:
-            updateNode = delNode.getLeft()
-        elif delNode.getLeft() is None and delNode.getRight() is not None:
-            updateNode = delNode.getRight()
+    def _deleteNode(self, delete_node):
+        update_node = None
+        if delete_node.getLeft() is None and delete_node.getRight() is None:
+            update_node = None
+        elif delete_node.getLeft() is not None and delete_node.getRight() is None:
+            update_node = delete_node.getLeft()
+        elif delete_node.getLeft() is None and delete_node.getRight() is not None:
+            update_node = delete_node.getRight()
         else:
-            updateNode = self._promoteSuccessor(delNode.getRight())
-            if updateNode != delNode.getRight():
-                updateNode.setRight(delNode.getRight())
-            updateNode.setLeft(delNode.getLeft())
-        return updateNode
+            update_node = self._promoteSuccessor(delete_node.getRight())
+            if update_node != delete_node.getRight():
+                update_node.setRight(delete_node.getRight())
+            update_node.setLeft(delete_node.getLeft())
+        return update_node
 
-    def _promoteSuccessor(self, cur):
-        successor = cur
-        if cur.getLeft() is not None:
-            successor = self._promoteSuccessor(cur.getLeft())
-            if successor == cur.getLeft():
-                cur.setLeft(successor.getRight())
+    def _promoteSuccessor(self, current_node):
+        successor = current_node
+        if current_node.getLeft() is not None:
+            successor = self._promoteSuccessor(current_node.getLeft())
+            if successor == current_node.getLeft():
+                current_node.setLeft(successor.getRight())
         return successor
 
     def min(self):
@@ -88,50 +88,50 @@ class DSABinarySearchTree:
             raise ValueError("Tree is empty")
         return self._minRec(self._root)
 
-    def _minRec(self, cur):
-        if cur.getLeft() is not None:
-            minKey = self._minRec(cur.getLeft())
+    def _minRec(self, current_node):
+        if current_node.getLeft() is not None:
+            min_key = self._minRec(current_node.getLeft())
         else:
-            minKey = cur.getKey()
-        return minKey
+            min_key = current_node.getKey()
+        return min_key
 
     def max(self):
         if self.isEmpty():
             raise ValueError("Tree is empty")
         return self._maxRec(self._root)
 
-    def _maxRec(self, cur):
-        if cur.getRight() is not None:
-            maxKey = self._maxRec(cur.getRight())
+    def _maxRec(self, current_node):
+        if current_node.getRight() is not None:
+            max_key = self._maxRec(current_node.getRight())
         else:
-            maxKey = cur.getKey()
-        return maxKey
+            max_key = current_node.getKey()
+        return max_key
 
     def height(self):
         return self._heightRec(self._root)
 
-    def _heightRec(self, cur):
-        if cur is None:
-            htSoFar = -1
+    def _heightRec(self, current_node):
+        if current_node is None:
+            height_so_far = -1
         else:
-            leftHt = self._heightRec(cur.getLeft())
-            rightHt = self._heightRec(cur.getRight())
-            if leftHt > rightHt:
-                htSoFar = leftHt + 1
+            left_height = self._heightRec(current_node.getLeft())
+            right_height = self._heightRec(current_node.getRight())
+            if left_height > right_height:
+                height_so_far = left_height + 1
             else:
-                htSoFar = rightHt + 1
-        return htSoFar
+                height_so_far = right_height + 1
+        return height_so_far
 
     def balance(self):
         if self.isEmpty():
             percentage = 100.0
         else:
-            h = self.height()
-            if h == 0:
+            tree_height = self.height()
+            if tree_height == 0:
                 percentage = 100.0
             else:
-                maxNodes = (2 ** (h + 1)) - 1
-                percentage = (self._count / maxNodes) * 100.0
+                max_nodes = (2 ** (tree_height + 1)) - 1
+                percentage = (self._count / max_nodes) * 100.0
         return percentage
 
     def inorder(self):
@@ -139,30 +139,30 @@ class DSABinarySearchTree:
         self._inorderRec(self._root, queue)
         return queue
 
-    def _inorderRec(self, cur, queue):
-        if cur is not None:
-            self._inorderRec(cur.getLeft(), queue)
-            queue.enqueue(cur.getKey())
-            self._inorderRec(cur.getRight(), queue)
+    def _inorderRec(self, current_node, queue):
+        if current_node is not None:
+            self._inorderRec(current_node.getLeft(), queue)
+            queue.enqueue(current_node.getKey())
+            self._inorderRec(current_node.getRight(), queue)
 
     def preorder(self):
         queue = DSAQueue()
         self._preorderRec(self._root, queue)
         return queue
 
-    def _preorderRec(self, cur, queue):
-        if cur is not None:
-            queue.enqueue(cur.getKey())
-            self._preorderRec(cur.getLeft(), queue)
-            self._preorderRec(cur.getRight(), queue)
+    def _preorderRec(self, current_node, queue):
+        if current_node is not None:
+            queue.enqueue(current_node.getKey())
+            self._preorderRec(current_node.getLeft(), queue)
+            self._preorderRec(current_node.getRight(), queue)
 
     def postorder(self):
         queue = DSAQueue()
         self._postorderRec(self._root, queue)
         return queue
 
-    def _postorderRec(self, cur, queue):
-        if cur is not None:
-            self._postorderRec(cur.getLeft(), queue)
-            self._postorderRec(cur.getRight(), queue)
-            queue.enqueue(cur.getKey())
+    def _postorderRec(self, current_node, queue):
+        if current_node is not None:
+            self._postorderRec(current_node.getLeft(), queue)
+            self._postorderRec(current_node.getRight(), queue)
+            queue.enqueue(current_node.getKey())

@@ -32,21 +32,21 @@ def handle_traversals(tree):
         traversal_running = True
         while traversal_running:
             display_traversal_menu()
-            sub_choice = input("Enter traversal choice: ").strip()
+            traversal_choice = input("Enter traversal choice: ").strip()
 
-            if sub_choice == "1":
+            if traversal_choice == "1":
                 print("In-order:  ", tree.inorder())
                 traversal_running = False
 
-            elif sub_choice == "2":
+            elif traversal_choice == "2":
                 print("Pre-order: ", tree.preorder())
                 traversal_running = False
 
-            elif sub_choice == "3":
+            elif traversal_choice == "3":
                 print("Post-order:", tree.postorder())
                 traversal_running = False
 
-            elif sub_choice == "0":
+            elif traversal_choice == "0":
                 traversal_running = False
 
             else:
@@ -54,13 +54,12 @@ def handle_traversals(tree):
 
 
 def load_sample_tree(tree):
-    # Sample keys from lecture slide 26: 50, 16, 7, 89, 70, 45, 10, 66, 95
     sample_keys = [50, 16, 7, 89, 70, 45, 10, 66, 95]
     index = 0
     while index < len(sample_keys):
         key = sample_keys[index]
         try:
-            tree.insert(key, "Val-" + str(key))
+            tree.insert(key, "Value-" + str(key))
         except ValueError:
             pass
         index += 1
@@ -76,45 +75,44 @@ def main():
         choice = input("Enter choice: ").strip()
 
         if choice == "1":
-            key_input = input("Enter key: ").strip()
-            val_input = input("Enter value: ").strip()
+            input_key = input("Enter key: ").strip()
+            input_value = input("Enter value: ").strip()
             try:
-                # If key looks like an integer, store as int for proper numeric sorting
                 try:
-                    parsed_key = int(key_input)
+                    key = int(input_key)
                 except ValueError:
-                    parsed_key = key_input
+                    key = input_key
 
-                tree.insert(parsed_key, val_input)
+                tree.insert(key, input_value)
                 print("Node added successfully.")
-            except ValueError as e:
-                print("Error:", e)
+            except ValueError as error:
+                print("Error:", error)
 
         elif choice == "2":
-            key_input = input("Enter key to delete: ").strip()
+            input_key = input("Enter key to delete: ").strip()
             try:
                 try:
-                    parsed_key = int(key_input)
+                    key = int(input_key)
                 except ValueError:
-                    parsed_key = key_input
+                    key = input_key
 
-                tree.delete(parsed_key)
+                tree.delete(key)
                 print("Node deleted successfully.")
-            except KeyError as e:
-                print("Error:", e)
+            except KeyError as error:
+                print("Error:", error)
 
         elif choice == "3":
-            key_input = input("Enter key to find: ").strip()
+            input_key = input("Enter key to find: ").strip()
             try:
                 try:
-                    parsed_key = int(key_input)
+                    key = int(input_key)
                 except ValueError:
-                    parsed_key = key_input
+                    key = input_key
 
-                val = tree.find(parsed_key)
-                print("Found value:", val)
-            except KeyError as e:
-                print("Error:", e)
+                value = tree.find(key)
+                print("Found value:", value)
+            except KeyError as error:
+                print("Error:", error)
 
         elif choice == "4":
             handle_traversals(tree)
@@ -126,8 +124,8 @@ def main():
             try:
                 print("Min Key:", tree.min())
                 print("Max Key:", tree.max())
-            except ValueError as e:
-                print("Error:", e)
+            except ValueError as error:
+                print("Error:", error)
 
         elif choice == "7":
             print("Balance Score: {:.2f}%".format(tree.balance()))

@@ -38,7 +38,6 @@ def format_search_edges(queue_of_edges):
 
 
 def load_graph_one(graph):
-    # Graph 1 from Practical 6 Page 2
     edges = [
         ("A", "B"), ("A", "C"), ("A", "D"),
         ("B", "E"),

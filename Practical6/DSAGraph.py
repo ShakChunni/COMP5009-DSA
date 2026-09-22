@@ -76,17 +76,14 @@ class DSAGraph:
         self._count += 1
 
     def addEdge(self, label_one, label_two):
-        try:
-            vertex_one = self.getVertex(label_one)
-        except KeyError:
+        if not self.hasVertex(label_one):
             self.addVertex(label_one)
-            vertex_one = self.getVertex(label_one)
 
-        try:
-            vertex_two = self.getVertex(label_two)
-        except KeyError:
+        if not self.hasVertex(label_two):
             self.addVertex(label_two)
-            vertex_two = self.getVertex(label_two)
+
+        vertex_one = self.getVertex(label_one)
+        vertex_two = self.getVertex(label_two)
 
         if not vertex_one.hasEdge(vertex_two):
             vertex_one.addEdge(vertex_two)
@@ -149,37 +146,29 @@ class DSAGraph:
         return result
 
     def displayAsMatrix(self):
-        labels = []
-        current_node = self._vertices.head
-        while current_node is not None:
-            labels.append(current_node.getValue().getLabel())
-            current_node = current_node.getNext()
-
         result = "   "
-        index = 0
-        while index < len(labels):
-            result += " " + labels[index] + " "
-            index += 1
+        column_node = self._vertices.head
+        while column_node is not None:
+            result += " " + column_node.getValue().getLabel() + " "
+            column_node = column_node.getNext()
         result += "\n"
 
-        row_index = 0
-        while row_index < len(labels):
-            row_label = labels[row_index]
-            row_vertex = self.getVertex(row_label)
-            result += " " + row_label + " "
+        row_node = self._vertices.head
+        while row_node is not None:
+            row_vertex = row_node.getValue()
+            result += " " + row_vertex.getLabel() + " "
 
-            col_index = 0
-            while col_index < len(labels):
-                col_label = labels[col_index]
-                col_vertex = self.getVertex(col_label)
+            column_node = self._vertices.head
+            while column_node is not None:
+                col_vertex = column_node.getValue()
                 if row_vertex.hasEdge(col_vertex):
                     result += " 1 "
                 else:
                     result += " 0 "
-                col_index += 1
+                column_node = column_node.getNext()
 
             result += "\n"
-            row_index += 1
+            row_node = row_node.getNext()
 
         return result
 
@@ -237,18 +226,16 @@ class DSAGraph:
 
         start_vertex.setVisited()
         stack.push(start_vertex)
-        current_vertex = start_vertex
 
         while not stack.isEmpty():
+            current_vertex = stack.top()
             unvisited_neighbor = current_vertex.getUnvisitedAdjacent()
-            while unvisited_neighbor is not None:
+            if unvisited_neighbor is not None:
                 tree_edges.enqueue(current_vertex.getLabel())
                 tree_edges.enqueue(unvisited_neighbor.getLabel())
                 unvisited_neighbor.setVisited()
                 stack.push(unvisited_neighbor)
-                current_vertex = unvisited_neighbor
-                unvisited_neighbor = current_vertex.getUnvisitedAdjacent()
-
-            current_vertex = stack.pop()
+            else:
+                stack.pop()
 
         return tree_edges

@@ -21,57 +21,51 @@ def display_menu():
 
 def format_search_edges(queue_of_edges):
     result = ""
-    edge_list = []
-    for item in queue_of_edges:
-        edge_list.append(item)
-
-    index = 0
+    source_label = None
     is_first = True
-    while index < len(edge_list) - 1:
-        if not is_first:
-            result += ", "
-        result += "(" + str(edge_list[index]) + " -> " + str(edge_list[index + 1]) + ")"
-        is_first = False
-        index += 2
+
+    for item in queue_of_edges:
+        if source_label is None:
+            source_label = item
+        else:
+            if not is_first:
+                result += ", "
+            result += "(" + str(source_label) + " -> " + str(item) + ")"
+            source_label = None
+            is_first = False
 
     return result
 
 
 def load_graph_one(graph):
-    edges = [
-        ("A", "B"), ("A", "C"), ("A", "D"),
-        ("B", "E"),
-        ("C", "D"),
-        ("D", "F"),
-        ("E", "F"), ("E", "G"),
-        ("F", "G")
-    ]
-    index = 0
-    while index < len(edges):
-        source, destination = edges[index]
-        graph.addEdge(source, destination)
-        index += 1
+    graph.addEdge("A", "B")
+    graph.addEdge("A", "C")
+    graph.addEdge("A", "D")
+    graph.addEdge("B", "E")
+    graph.addEdge("C", "D")
+    graph.addEdge("D", "F")
+    graph.addEdge("E", "F")
+    graph.addEdge("E", "G")
+    graph.addEdge("F", "G")
     print("Sample Graph 1 loaded successfully (7 vertices, 9 edges).")
 
 
 def load_graph_two(graph):
-    # Graph 2 from Practical 6 Page 2
-    edges = [
-        ("A", "B"), ("A", "C"), ("A", "D"),
-        ("B", "E"),
-        ("C", "F"),
-        ("D", "E"), ("D", "F"), ("D", "H"),
-        ("E", "G"),
-        ("F", "I"),
-        ("G", "H"), ("G", "J"),
-        ("H", "I"), ("H", "J"),
-        ("I", "J")
-    ]
-    index = 0
-    while index < len(edges):
-        source, destination = edges[index]
-        graph.addEdge(source, destination)
-        index += 1
+    graph.addEdge("A", "B")
+    graph.addEdge("A", "C")
+    graph.addEdge("A", "D")
+    graph.addEdge("B", "E")
+    graph.addEdge("C", "F")
+    graph.addEdge("D", "E")
+    graph.addEdge("D", "F")
+    graph.addEdge("D", "H")
+    graph.addEdge("E", "G")
+    graph.addEdge("F", "I")
+    graph.addEdge("G", "H")
+    graph.addEdge("G", "J")
+    graph.addEdge("H", "I")
+    graph.addEdge("H", "J")
+    graph.addEdge("I", "J")
     print("Sample Graph 2 loaded successfully (10 vertices, 15 edges).")
 
 

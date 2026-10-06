@@ -10,6 +10,8 @@ def main():
         print("2. Display table")
         print("3. Find entry")
         print("4. Remove entry")
+        print("5. Load RandomNames7000.csv")
+        print("6. Save table to CSV")
         print("0. Exit")
         choice = input("Choose an option: ")
 
@@ -33,6 +35,16 @@ def main():
                 print("Entry removed.")
             else:
                 print("Key not found")
+        elif choice == "5":
+            table.load("RandomNames7000.csv")
+            print("CSV loaded.")
+            print("Records:", table.getCount())
+            print("Table size:", table.getSize())
+            print("Load factor:", table.loadFactor())
+        elif choice == "6":
+            filename = input("Enter output filename: ")
+            table.save(filename)
+            print("Table saved.")
         elif choice != "0":
             print("Invalid option")
 

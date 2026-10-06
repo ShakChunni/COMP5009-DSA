@@ -1,17 +1,4 @@
 class DSAHashEntry:
-    """A single slot in a hash table.
-
-    Each slot holds the key, the value and a state that tells us what the
-    slot means:
-
-        FREE             - the slot has never been used
-        USED             - the slot currently holds a key/value pair
-        PREVIOUSLY_USED  - a pair was here but was removed (a "tombstone").
-                           We cannot mark this slot FREE again, because
-                           removing it would break the probing chain of keys
-                           that probed past this slot to reach a later slot.
-    """
-
     FREE = 0
     USED = 1
     PREVIOUSLY_USED = 2

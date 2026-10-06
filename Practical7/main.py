@@ -18,7 +18,7 @@ def main():
     print(small_table)
 
     data_table = DSAHashTable(11)
-    data_table.load("RandomNames7000(1).csv")
+    data_table.load("RandomNames7000.csv")
     print("CSV records stored:", data_table.getCount())
     print("Current table size:", data_table.getSize())
     print("Current load factor:", data_table.loadFactor())

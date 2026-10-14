@@ -619,74 +619,34 @@ the submitted graph/hash/heap drivers. Independent temporary review scripts are
 not part of the deliverable; reproducible required tests live in the module drivers.
 Use these as validation facts, not a claim that reviewers guarantee a grade.
 
-## 11. Figures for Web GPT / Overleaf
+## 11. Generated figures and report placement
 
-Use real output files. Ask for plotting/TikZ/LaTeX code rather than invented pictures
-with guessed numbers. Each figure needs a caption explaining model assumptions,
-units, run parameters and what it demonstrates. Four figure-input CSVs are generated
-in `report/figure_data/`; edge and timing CSVs remain in their existing folders.
+The figures are now generated with Matplotlib in `report/figures/`, using the exact
+blue, orange, green and purple palette extracted from your supplied paper.
+Each has a vector PDF for Overleaf and a 300 dpi PNG for preview/sharing.
 
-### Figure A — required module interaction/UML
+Read [FIGURE_GUIDE.md](FIGURE_GUIDE.md) for the recommended section/placement of
+**every figure**, captions, interpretation notes, data sources and LaTeX examples.
+The guide distinguishes the required UML diagram from supporting figures and
+explains which to prioritize or place in an appendix. The required timing table
+must remain in the report even when its plot is included.
 
-Give GPT Section 4 and source files if needed. Prompt:
+| Figure file | Put it in |
+|---|---|
+| `01_system_uml.pdf` | System design, after introducing the four modules |
+| `02_module_data_flow.pdf` | Integration/system design, after the request workflow |
+| `03_farm_network.pdf` | Graph design/results, after topology/model assumptions |
+| `04_bfs_levels.pdf` | BFS results, or appendix |
+| `05_hash_behaviour.pdf` | Hash collision/deletion/resizing discussion |
+| `06_max_heap.pdf` | Heap implementation, after priority/percolation explanation |
+| `07_collection_order.pdf` | Scheduling results, or appendix |
+| `08_sorting_timings.pdf` | Sorting results, alongside the required timing table |
 
-> Produce a compact UML/data-flow figure in TikZ suitable for Overleaf. Use exactly
-> the classes/modules and relationships described here. Show custom hash lookup,
-> graph Dijkstra returning T/path, scheduler P=F/T, max heap, accepted history and
-> both sorting functions. Label sorting as a module, not an invented Python class.
-> Do not add databases, external services or unimplemented features.
-
-### Figure B — test network and example shortest path
-
-Inputs: graph_vertices.csv, data/transport_edges.csv, priorities_and_collection_order.csv.
-Plot all 41 nodes and 55 undirected edges if legible; HUB distinct and isolated
-404a0 visible. A schematic layout is allowed (label it schematic). A coordinate
-plot is also possible but WA-scale distances make southern nodes cluster. If using
-an inset/subgraph, clearly say it is an excerpt and preserve all displayed IDs/edges.
-Highlight an actual request path from the CSV; use its actual total, not straight-line
-distance. Label minutes and identify the educational network, not real roads.
-
-### Figure C — BFS levels / hash collision
-
-Use bfs_levels.csv for a layered BFS tree/level diagram. Unreachable 404a0 belongs
-outside reachable levels. For a hash diagram use the exact qlctx/c1c13 probe sequence
-from hash_tests.txt; show USED/FREE/DELETED states and the table capacity at that point.
-Never copy indices from the resized table into the 53-slot collision example.
-
-### Figure D — max heap state and collection order
-
-Use heap_states.csv. Choose the state immediately after valid insertion 12. For
-array index i, map children to 2i+1/2i+2 and label nodes with request ID/priority.
-Array order is heap storage order, not a fully sorted list. For an extraction
-sequence use priorities_and_collection_order.csv and show the first five requests.
-
-### Figure E — benchmark comparison
-
-Use sample_output/benchmark_results.csv. Suggested plot: three panels for random,
-nearly sorted and reversed; x=100/500/1000 records, y=mean milliseconds, two lines
-for algorithms. Include seed 5008, 7 repetitions, Python/environment details.
-Do not fabricate error bars: the current CSV saves means, not individual samples
-or uncertainty estimates. No curves claiming quadratic observed growth unless
-the measurements support that claim. Include the numerical table as well.
-
-### Useful LaTeX starting snippets
-
-```tex
-\usepackage{amsmath,booktabs,graphicx}
-\usepackage[hidelinks]{hyperref}
-% Include each figure you actually generated:
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\linewidth]{figures/module_flow.pdf}
-  \caption{Interaction of the four implemented modules. Transportation times
-  and feedstock quantities are educational modelling values.}
-  \label{fig:module-flow}
-\end{figure}
-```
-
-Transfer the current RESULTS table into a booktabs table, retaining milliseconds.
-For code excerpts use a small `listings` snippet or pseudocode you can explain;
-the complete source is in the ZIP, so the report need not reproduce every file.
+`all_figures_preview.pdf` contains the full set for inspection; embed the individual
+PDFs in Overleaf. `figures_manifest.json` records input hashes and plotting metadata.
+For regeneration use `python3 report/generate_figures.py` in an environment with
+Matplotlib. This plotting dependency applies only to the optional report helper;
+the application and tests remain standard-library Python.
 
 ## 12. Limitations and reflection to discuss
 

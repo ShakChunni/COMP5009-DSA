@@ -1,7 +1,7 @@
 # COMP5008 Biogas Feedstock Collection Network
 
 Python backend with four integrated modules: weighted graph, farm hash table,
-collection max heap, and Merge/Quick Sort reporting. No third-party packages needed.
+collection max heap, and Merge/Quick Sort reporting. No third-party packages needed for the application or tests.
 
 ## Run
 
@@ -64,6 +64,8 @@ python3 generate_report_evidence.py
 | `generate_report_evidence.py` | Regenerates factual report tables and figure inputs |
 | `report/REPORT_GUIDE.md` | Detailed notes for writing your own report in Overleaf |
 | `report/RESULTS.md` | Actual results for the latest saved benchmark run |
+| `report/FIGURE_GUIDE.md`, `report/figures/` | Generated figures, captions and Overleaf placement |
+| `report/generate_figures.py` | Optional Matplotlib figure generator; separate plotting dependency |
 
 ## Data and assumptions
 
@@ -146,3 +148,15 @@ Exclude `__pycache__/`, `*.pyc`, `.DS_Store`, `.git/` and temporary/editor files
 The assignment-brief PDF is not needed in the submission ZIP. Keep the module
 folders rather than flattening imports. Run `python3 main.py` and `python3 run_tests.py`
 from an extracted copy before submitting.
+
+## Report figures
+
+Eight figures are available as vector PDFs and 300 dpi PNGs in `report/figures/`.
+Their colours match the supplied Containement_Not_Recovery paper. See
+`report/FIGURE_GUIDE.md` for captions, report placement, and regeneration instructions.
+The UML is explicitly required; other figures support the report. Include the
+required timing table as well as the benchmark plot. Regenerate figures after
+rerunning benchmarks so the figures and numerical table agree.
+
+Only `report/generate_figures.py` needs Matplotlib; this does not change the
+standard-library requirements of `main.py` or `run_tests.py`.

@@ -1,0 +1,34 @@
+{
+  "palette_reference": "Containement_Not_Recovery (1).pdf",
+  "palette_method": "RGB drawing operators extracted from the supplied reference PDF",
+  "palette": {
+    "blue": "#2F5597",
+    "orange": "#C55A11",
+    "green": "#548235",
+    "purple": "#8064A2"
+  },
+  "matplotlib_version": "3.11.2",
+  "png_dpi": 300,
+  "font": "STIXGeneral; DejaVu Sans Mono for BFS IDs",
+  "error_bars": false,
+  "figures": [
+    "01_system_uml",
+    "02_module_data_flow",
+    "03_farm_network",
+    "04_bfs_levels",
+    "05_hash_behaviour",
+    "06_max_heap",
+    "07_collection_order",
+    "08_sorting_timings"
+  ],
+  "input_sha256": {
+    "report/figure_data/graph_vertices.csv": "c93b2bccb7f3eca24c75416335727225ef57088acf699edff4a20e9a381fc2e6",
+    "data/transport_edges.csv": "9b1d686c35741548a1a53febf2c29923173c6288e137c598b3be1cdc7412d30f",
+    "report/figure_data/bfs_levels.csv": "3c8a52bd7e22077efed7f14543e0c401cdd6b65c61618fa3aa3a4e31ecf3f9ef",
+    "report/figure_data/priorities_and_collection_order.csv": "37770f1b33f1003bd53e78d050aa7338f5f5c8fb8265f09be65d8bc220cb137f",
+    "report/figure_data/heap_states.csv": "aefa5596e297b6e48479fad0ce9f8105c3c59d22b3e8f1b1158796dd781277fe",
+    "sample_output/hash_tests.txt": "49d9c1172baafac2f7e88933d1794163f44cfb8b239d983675deb63d88ecfcf9",
+    "sample_output/benchmark_results.csv": "8ca9d9a2ffea7fbda7d44bfcc9f3590954aabcdaf01a68a04450f9fcdf21ea83",
+    "sample_output/benchmark_environment.json": "7b72e1121013e96d37de6ea3796585fbe2ccfda545ed7343a01e43f9aca778f0"
+  }
+}

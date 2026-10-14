@@ -1,0 +1,55 @@
+=== SORTING EDGE CASES (SYNTHETIC UNIT FIXTURES) ===
+PASS mergeSort ()
+PASS quickSort ()
+PASS mergeSort (1,)
+PASS quickSort (1,)
+PASS mergeSort (2, 1)
+PASS quickSort (2, 1)
+PASS mergeSort (1, 2)
+PASS quickSort (1, 2)
+PASS mergeSort (3, 1, 2)
+PASS quickSort (3, 1, 2)
+PASS mergeSort (2, 2, 2)
+PASS quickSort (2, 2, 2)
+PASS mergeSort (5, 4, 3, 2, 1)
+PASS quickSort (5, 4, 3, 2, 1)
+PASS mergeSort (1, 2, 3, 4, 5)
+PASS quickSort (1, 2, 3, 4, 5)
+PASS mergeSort (1.5, 0.5, 1.5, 2.5)
+PASS quickSort (1.5, 0.5, 1.5, 2.5)
+PASS Merge Sort preserves equal-key order
+PASS Quick Sort all-equal large input terminates
+=== REQUIRED GRAPH-DERIVED INPUT CONDITIONS ===
+After 10 successful insertions: load factor=0.1887 (10/53)
+After 20 successful insertions: load factor=0.3774 (20/53)
+After 30 successful insertions: load factor=0.5660 (30/53)
+After 40 successful insertions: load factor=0.3738 (40/107)
+PASS 100 random mergeSort
+PASS 100 random quickSort
+PASS 100: exactly 10% records displaced
+PASS 100 nearly_sorted mergeSort
+PASS 100 nearly_sorted quickSort
+PASS 100: reversed descending
+PASS 100 reversed mergeSort
+PASS 100 reversed quickSort
+PASS 500 random mergeSort
+PASS 500 random quickSort
+PASS 500: exactly 10% records displaced
+PASS 500 nearly_sorted mergeSort
+PASS 500 nearly_sorted quickSort
+PASS 500: reversed descending
+PASS 500 reversed mergeSort
+PASS 500 reversed quickSort
+PASS 1000 random mergeSort
+PASS 1000 random quickSort
+PASS 1000: exactly 10% records displaced
+PASS 1000 nearly_sorted mergeSort
+PASS 1000 nearly_sorted quickSort
+PASS 1000: reversed descending
+PASS 1000 reversed mergeSort
+PASS 1000 reversed quickSort
+PASS benchmark ignores farms whose graph locations are not yet added
+PASS benchmark records still generate after farm-only insertion
+PASS benchmark also ignores newly added isolated farm locations
+PASS benchmark includes farm after it is connected to hub
+SORTING TESTS PASSED

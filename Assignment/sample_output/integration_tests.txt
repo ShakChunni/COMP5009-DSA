@@ -1,0 +1,60 @@
+After 10 successful insertions: load factor=0.1887 (10/53)
+After 20 successful insertions: load factor=0.3774 (20/53)
+After 30 successful insertions: load factor=0.5660 (30/53)
+After 40 successful insertions: load factor=0.3738 (40/107)
+PRIORITY R001: 10.00 / 199.07 = 0.050234
+HEAP after insertion: [R001:0.050234]
+PRIORITY R002: 17.00 / 378.26 = 0.044943
+HEAP after insertion: [R001:0.050234, R002:0.044943]
+PRIORITY R003: 24.00 / 382.70 = 0.062712
+HEAP after insertion: [R003:0.062712, R002:0.044943, R001:0.050234]
+PRIORITY R004: 31.00 / 583.48 = 0.053129
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943]
+PRIORITY R005: 38.00 / 874.66 = 0.043445
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943, R005:0.043445]
+PRIORITY R006: 14.00 / 814.51 = 0.017188
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943, R005:0.043445, R006:0.017188]
+PRIORITY R007: 21.00 / 1111.85 = 0.018887
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943, R005:0.043445, R006:0.017188, R007:0.018887]
+PRIORITY R008: 28.00 / 943.74 = 0.029669
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943, R005:0.043445, R006:0.017188, R007:0.018887, R008:0.029669]
+PRIORITY R009: 35.00 / 718.16 = 0.048736
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R009:0.048736, R005:0.043445, R006:0.017188, R007:0.018887, R008:0.029669, R002:0.044943]
+PRIORITY R010: 11.00 / 411.06 = 0.026760
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R009:0.048736, R005:0.043445, R006:0.017188, R007:0.018887, R008:0.029669, R002:0.044943, R010:0.026760]
+PRIORITY R011: 18.00 / 137.15 = 0.131243
+HEAP after insertion: [R011:0.131243, R003:0.062712, R001:0.050234, R009:0.048736, R004:0.053129, R006:0.017188, R007:0.018887, R008:0.029669, R002:0.044943, R010:0.026760, R005:0.043445]
+PRIORITY R012: 25.00 / 641.01 = 0.039001
+HEAP after insertion: [R011:0.131243, R003:0.062712, R001:0.050234, R009:0.048736, R004:0.053129, R012:0.039001, R007:0.018887, R008:0.029669, R002:0.044943, R010:0.026760, R005:0.043445, R006:0.017188]
+REJECTED request CSV line 14: Duplicate collection request ID: R001
+REJECTED request CSV line 15: Farm already has a pending collection request: v75pu
+REJECTED request CSV line 16: No valid collection route to the hub for 404a0
+REJECTED request CSV line 17: 'Farm not found: zzzzz'
+REJECTED request CSV line 18: FarmID must contain ASCII letters/digits only
+REJECTED request CSV line 19: Feedstock must be positive and finite
+REJECTED request CSV line 20: Feedstock must be positive and finite
+PASS integration input counts
+HEAP after extraction: [R003:0.062712, R004:0.053129, R001:0.050234, R009:0.048736, R005:0.043445, R012:0.039001, R007:0.018887, R008:0.029669, R002:0.044943, R010:0.026760, R006:0.017188]
+COLLECT: R011 FarmID=cc5fd F=18.00 model tonnes T=137.15 min P=0.131243
+HEAP after extraction: [R004:0.053129, R009:0.048736, R001:0.050234, R002:0.044943, R005:0.043445, R012:0.039001, R007:0.018887, R008:0.029669, R006:0.017188, R010:0.026760]
+COLLECT: R003 FarmID=qlctx F=24.00 model tonnes T=382.70 min P=0.062712
+HEAP after extraction: [R001:0.050234, R009:0.048736, R012:0.039001, R002:0.044943, R005:0.043445, R010:0.026760, R007:0.018887, R008:0.029669, R006:0.017188]
+COLLECT: R004 FarmID=58yzc F=31.00 model tonnes T=583.48 min P=0.053129
+HEAP after extraction: [R009:0.048736, R002:0.044943, R012:0.039001, R008:0.029669, R005:0.043445, R010:0.026760, R007:0.018887, R006:0.017188]
+COLLECT: R001 FarmID=v75pu F=10.00 model tonnes T=199.07 min P=0.050234
+HEAP after extraction: [R002:0.044943, R005:0.043445, R012:0.039001, R008:0.029669, R006:0.017188, R010:0.026760, R007:0.018887]
+COLLECT: R009 FarmID=735d4 F=35.00 model tonnes T=718.16 min P=0.048736
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS request links all modules
+PASS both sorting algorithms integrated with request history
+INTEGRATION TEST PASSED

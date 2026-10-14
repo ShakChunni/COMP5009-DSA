@@ -1,0 +1,132 @@
+After 10 successful insertions: load factor=0.1887 (10/53)
+After 20 successful insertions: load factor=0.3774 (20/53)
+After 30 successful insertions: load factor=0.5660 (30/53)
+After 40 successful insertions: load factor=0.3738 (40/107)
+=== REQUIRED INTEGRATED HEAP RUN ===
+PRIORITY R001: 10.00 / 199.07 = 0.050234
+HEAP after insertion: [R001:0.050234]
+PRIORITY R002: 17.00 / 378.26 = 0.044943
+HEAP after insertion: [R001:0.050234, R002:0.044943]
+PRIORITY R003: 24.00 / 382.70 = 0.062712
+HEAP after insertion: [R003:0.062712, R002:0.044943, R001:0.050234]
+PRIORITY R004: 31.00 / 583.48 = 0.053129
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943]
+PRIORITY R005: 38.00 / 874.66 = 0.043445
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943, R005:0.043445]
+PRIORITY R006: 14.00 / 814.51 = 0.017188
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943, R005:0.043445, R006:0.017188]
+PRIORITY R007: 21.00 / 1111.85 = 0.018887
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943, R005:0.043445, R006:0.017188, R007:0.018887]
+PRIORITY R008: 28.00 / 943.74 = 0.029669
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R002:0.044943, R005:0.043445, R006:0.017188, R007:0.018887, R008:0.029669]
+PRIORITY R009: 35.00 / 718.16 = 0.048736
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R009:0.048736, R005:0.043445, R006:0.017188, R007:0.018887, R008:0.029669, R002:0.044943]
+PRIORITY R010: 11.00 / 411.06 = 0.026760
+HEAP after insertion: [R003:0.062712, R004:0.053129, R001:0.050234, R009:0.048736, R005:0.043445, R006:0.017188, R007:0.018887, R008:0.029669, R002:0.044943, R010:0.026760]
+PRIORITY R011: 18.00 / 137.15 = 0.131243
+HEAP after insertion: [R011:0.131243, R003:0.062712, R001:0.050234, R009:0.048736, R004:0.053129, R006:0.017188, R007:0.018887, R008:0.029669, R002:0.044943, R010:0.026760, R005:0.043445]
+PRIORITY R012: 25.00 / 641.01 = 0.039001
+HEAP after insertion: [R011:0.131243, R003:0.062712, R001:0.050234, R009:0.048736, R004:0.053129, R012:0.039001, R007:0.018887, R008:0.029669, R002:0.044943, R010:0.026760, R005:0.043445, R006:0.017188]
+REJECTED request CSV line 14: Duplicate collection request ID: R001
+REJECTED request CSV line 15: Farm already has a pending collection request: v75pu
+REJECTED request CSV line 16: No valid collection route to the hub for 404a0
+REJECTED request CSV line 17: 'Farm not found: zzzzz'
+REJECTED request CSV line 18: FarmID must contain ASCII letters/digits only
+REJECTED request CSV line 19: Feedstock must be positive and finite
+REJECTED request CSV line 20: Feedstock must be positive and finite
+PASS 12 accepted insertions and 7 rejected requests
+PASS heap property after insertion run
+PEEK: R011 FarmID=cc5fd F=18.00 model tonnes T=137.15 min P=0.131243
+PASS peek preserves heap count
+HEAP after extraction: [R003:0.062712, R004:0.053129, R001:0.050234, R009:0.048736, R005:0.043445, R012:0.039001, R007:0.018887, R008:0.029669, R002:0.044943, R010:0.026760, R006:0.017188]
+COLLECT: R011 FarmID=cc5fd F=18.00 model tonnes T=137.15 min P=0.131243
+Collection order 1: R011
+PASS non-increasing priority
+PASS heap property after extraction
+HEAP after extraction: [R004:0.053129, R009:0.048736, R001:0.050234, R002:0.044943, R005:0.043445, R012:0.039001, R007:0.018887, R008:0.029669, R006:0.017188, R010:0.026760]
+COLLECT: R003 FarmID=qlctx F=24.00 model tonnes T=382.70 min P=0.062712
+Collection order 2: R003
+PASS non-increasing priority
+PASS heap property after extraction
+HEAP after extraction: [R001:0.050234, R009:0.048736, R012:0.039001, R002:0.044943, R005:0.043445, R010:0.026760, R007:0.018887, R008:0.029669, R006:0.017188]
+COLLECT: R004 FarmID=58yzc F=31.00 model tonnes T=583.48 min P=0.053129
+Collection order 3: R004
+PASS non-increasing priority
+PASS heap property after extraction
+HEAP after extraction: [R009:0.048736, R002:0.044943, R012:0.039001, R008:0.029669, R005:0.043445, R010:0.026760, R007:0.018887, R006:0.017188]
+COLLECT: R001 FarmID=v75pu F=10.00 model tonnes T=199.07 min P=0.050234
+Collection order 4: R001
+PASS non-increasing priority
+PASS heap property after extraction
+HEAP after extraction: [R002:0.044943, R005:0.043445, R012:0.039001, R008:0.029669, R006:0.017188, R010:0.026760, R007:0.018887]
+COLLECT: R009 FarmID=735d4 F=35.00 model tonnes T=718.16 min P=0.048736
+Collection order 5: R009
+PASS non-increasing priority
+PASS heap property after extraction
+HEAP after extraction: [R005:0.043445, R008:0.029669, R012:0.039001, R007:0.018887, R006:0.017188, R010:0.026760]
+COLLECT: R002 FarmID=h9cp1 F=17.00 model tonnes T=378.26 min P=0.044943
+PASS remaining priorities descending
+HEAP after extraction: [R012:0.039001, R008:0.029669, R010:0.026760, R007:0.018887, R006:0.017188]
+COLLECT: R005 FarmID=fzccd F=38.00 model tonnes T=874.66 min P=0.043445
+PASS remaining priorities descending
+HEAP after extraction: [R008:0.029669, R007:0.018887, R010:0.026760, R006:0.017188]
+COLLECT: R012 FarmID=85yvj F=25.00 model tonnes T=641.01 min P=0.039001
+PASS remaining priorities descending
+HEAP after extraction: [R010:0.026760, R007:0.018887, R006:0.017188]
+COLLECT: R008 FarmID=c81cd F=28.00 model tonnes T=943.74 min P=0.029669
+PASS remaining priorities descending
+HEAP after extraction: [R007:0.018887, R006:0.017188]
+COLLECT: R010 FarmID=8e64d F=11.00 model tonnes T=411.06 min P=0.026760
+PASS remaining priorities descending
+HEAP after extraction: [R006:0.017188]
+COLLECT: R007 FarmID=gslqa F=21.00 model tonnes T=1111.85 min P=0.018887
+PASS remaining priorities descending
+HEAP after extraction: []
+COLLECT: R006 FarmID=g4q82 F=14.00 model tonnes T=814.51 min P=0.017188
+PASS remaining priorities descending
+PASS empty scheduler peek: Heap is empty
+PASS empty scheduler extraction: Heap is empty
+PASS reused completed request ID: Duplicate collection request ID: R001
+PASS invalid feedstock 0: Feedstock must be positive and finite
+PASS invalid feedstock -1: Feedstock must be positive and finite
+PASS invalid feedstock bad: Feedstock must be numerical
+PASS invalid feedstock None: Feedstock must be numerical
+PASS invalid feedstock True: Feedstock must be numerical
+PASS invalid feedstock nan: Feedstock must be positive and finite
+PASS invalid feedstock inf: Feedstock must be positive and finite
+PASS empty request ID: Request ID must be non-empty without outer whitespace
+PASS oversized feedstock integer: Feedstock must be numerical
+PASS invalid direct heap request: Request needs a finite calculated priority
+=== EQUAL PRIORITY FIFO TIES ===
+PRIORITY TIE1: 199.07 / 199.07 = 1.000000
+HEAP after insertion: [TIE1:1.000000]
+PRIORITY TIE2: 378.26 / 378.26 = 1.000000
+HEAP after insertion: [TIE1:1.000000, TIE2:1.000000]
+HEAP after extraction: [TIE2:1.000000]
+COLLECT: TIE1 FarmID=v75pu F=199.07 model tonnes T=199.07 min P=1.000000
+PASS equal priority earliest first
+HEAP after extraction: []
+COLLECT: TIE2 FarmID=h9cp1 F=378.26 model tonnes T=378.26 min P=1.000000
+PASS equal priority second next
+=== FARM DELETED AFTER SCHEDULING ===
+PRIORITY DELETED: 100.00 / 199.07 = 0.502336
+HEAP after insertion: [DELETED:0.502336]
+  probe 0: index 10, USED:v75pu
+DELETE v75pu: tombstone at 10, load=0.3645
+HEAP after extraction: []
+CANCELLED DELETED: farm record has been deleted
+PASS deleted pending farm cancelled by peek: Heap is empty
+PASS cancelled request removed from heap
+PASS request for deleted farm: 'Farm not found: v75pu'
+PRIORITY DELETED2: 100.00 / 199.07 = 0.502336
+HEAP after insertion: [DELETED2:0.502336]
+HEAP after extraction: []
+CANCELLED DELETED2: farm record has been deleted
+PASS deleted pending farm cancelled by extraction: Heap is empty
+PASS zero transportation time: Collection transportation time must be greater than zero
+PRIORITY FULL1: 10.00 / 199.07 = 0.050234
+HEAP after insertion: [FULL1:0.050234]
+PRIORITY FULL2: 10.00 / 378.26 = 0.026437
+PASS full heap: Heap is full
+PASS failed insertion does not enter history
+HEAP TESTS PASSED

@@ -1,0 +1,254 @@
+=== 40 REAL FARM INSERTIONS WITH PROBING AND RESIZING ===
+  probe 0: index 0, FREE
+INSERT v75pu: index=0, count=1, size=53, load=0.0189
+  probe 0: index 2, FREE
+INSERT h9cp1: index=2, count=2, size=53, load=0.0377
+  probe 0: index 45, FREE
+INSERT qlctx: index=45, count=3, size=53, load=0.0566
+  probe 0: index 26, FREE
+INSERT 58yzc: index=26, count=4, size=53, load=0.0755
+  probe 0: index 36, FREE
+INSERT fzccd: index=36, count=5, size=53, load=0.0943
+  probe 0: index 40, FREE
+INSERT g4q82: index=40, count=6, size=53, load=0.1132
+  probe 0: index 14, FREE
+INSERT gslqa: index=14, count=7, size=53, load=0.1321
+  probe 0: index 4, FREE
+INSERT c81cd: index=4, count=8, size=53, load=0.1509
+  probe 0: index 7, FREE
+INSERT 735d4: index=7, count=9, size=53, load=0.1698
+  probe 0: index 39, FREE
+INSERT 8e64d: index=39, count=10, size=53, load=0.1887
+After 10 successful insertions: load factor=0.1887 (10/53)
+  probe 0: index 22, FREE
+INSERT cc5fd: index=22, count=11, size=53, load=0.2075
+  probe 0: index 41, FREE
+INSERT 85yvj: index=41, count=12, size=53, load=0.2264
+  probe 0: index 18, FREE
+INSERT v2jbu: index=18, count=13, size=53, load=0.2453
+  probe 0: index 32, FREE
+INSERT zaz9u: index=32, count=14, size=53, load=0.2642
+  probe 0: index 35, FREE
+INSERT 24tju: index=35, count=15, size=53, load=0.2830
+  probe 0: index 44, FREE
+INSERT 9bc88: index=44, count=16, size=53, load=0.3019
+  probe 0: index 1, FREE
+INSERT c96c9: index=1, count=17, size=53, load=0.3208
+  probe 0: index 23, FREE
+INSERT x7jvy: index=23, count=18, size=53, load=0.3396
+  probe 0: index 50, FREE
+INSERT 6jvno: index=50, count=19, size=53, load=0.3585
+  probe 0: index 10, FREE
+INSERT b9752: index=10, count=20, size=53, load=0.3774
+After 20 successful insertions: load factor=0.3774 (20/53)
+  probe 0: index 37, FREE
+INSERT 7735f: index=37, count=21, size=53, load=0.3962
+  probe 0: index 36, USED:fzccd
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 2, USED:h9cp1
+  collision: occupied by a different FarmID; use next probe
+  probe 2: index 21, FREE
+INSERT 90629: index=21, count=22, size=53, load=0.4151
+  probe 0: index 34, FREE
+INSERT 3d8af: index=34, count=23, size=53, load=0.4340
+  probe 0: index 25, FREE
+INSERT 1cc85: index=25, count=24, size=53, load=0.4528
+  probe 0: index 7, USED:735d4
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 52, FREE
+INSERT ee349: index=52, count=25, size=53, load=0.4717
+  probe 0: index 40, USED:g4q82
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 26, USED:58yzc
+  collision: occupied by a different FarmID; use next probe
+  probe 2: index 12, FREE
+INSERT cd8b9: index=12, count=26, size=53, load=0.4906
+  probe 0: index 8, FREE
+INSERT yd20s: index=8, count=27, size=53, load=0.5094
+  probe 0: index 17, FREE
+INSERT 96d4e: index=17, count=28, size=53, load=0.5283
+  probe 0: index 18, USED:v2jbu
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 27, FREE
+INSERT 60e63: index=27, count=29, size=53, load=0.5472
+  probe 0: index 19, FREE
+INSERT 8bd08: index=19, count=30, size=53, load=0.5660
+After 30 successful insertions: load factor=0.5660 (30/53)
+  probe 0: index 37, USED:7735f
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 7, USED:735d4
+  collision: occupied by a different FarmID; use next probe
+  probe 2: index 30, FREE
+INSERT 7d2c0: index=30, count=31, size=53, load=0.5849
+  probe 0: index 39, USED:8e64d
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 6, FREE
+INSERT df2e4: index=6, count=32, size=53, load=0.6038
+  probe 0: index 6, USED:df2e4
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 30, USED:7d2c0
+  collision: occupied by a different FarmID; use next probe
+  probe 2: index 1, USED:c96c9
+  collision: occupied by a different FarmID; use next probe
+  probe 3: index 25, USED:1cc85
+  collision: occupied by a different FarmID; use next probe
+  probe 4: index 49, FREE
+INSERT 4mw8y: index=49, count=33, size=53, load=0.6226
+  probe 0: index 13, FREE
+INSERT 1d900: index=13, count=34, size=53, load=0.6415
+  probe 0: index 1, USED:c96c9
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 46, FREE
+INSERT 37d48: index=46, count=35, size=53, load=0.6604
+  probe 0: index 13, USED:1d900
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 46, USED:37d48
+  collision: occupied by a different FarmID; use next probe
+  probe 2: index 26, USED:58yzc
+  collision: occupied by a different FarmID; use next probe
+  probe 3: index 6, USED:df2e4
+  collision: occupied by a different FarmID; use next probe
+  probe 4: index 39, USED:8e64d
+  collision: occupied by a different FarmID; use next probe
+  probe 5: index 19, USED:8bd08
+  collision: occupied by a different FarmID; use next probe
+  probe 6: index 52, USED:ee349
+  collision: occupied by a different FarmID; use next probe
+  probe 7: index 32, USED:zaz9u
+  collision: occupied by a different FarmID; use next probe
+  probe 8: index 12, USED:cd8b9
+  collision: occupied by a different FarmID; use next probe
+  probe 9: index 45, USED:qlctx
+  collision: occupied by a different FarmID; use next probe
+  probe 10: index 25, USED:1cc85
+  collision: occupied by a different FarmID; use next probe
+  probe 11: index 5, FREE
+INSERT 7c9d7: index=5, count=36, size=53, load=0.6792
+  probe 0: index 5, USED:7c9d7
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 28, FREE
+INSERT a30b2: index=28, count=37, size=53, load=0.6981
+RESIZE 53 -> 107; all live records rehashed
+  probe 0: index 104, USED:735d4
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 70, FREE
+INSERT c6748: index=70, count=38, size=107, load=0.3551
+  probe 0: index 14, FREE
+INSERT c1c13: index=14, count=39, size=107, load=0.3645
+  probe 0: index 76, FREE
+INSERT 404a0: index=76, count=40, size=107, load=0.3738
+After 40 successful insertions: load factor=0.3738 (40/107)
+PASS 40 farm records loaded
+PASS resized to prime capacity 107
+PASS complete record retrieved v75pu
+PASS complete record retrieved h9cp1
+PASS complete record retrieved qlctx
+PASS complete record retrieved 58yzc
+PASS complete record retrieved fzccd
+PASS complete record retrieved g4q82
+PASS complete record retrieved gslqa
+PASS complete record retrieved c81cd
+PASS complete record retrieved 735d4
+PASS complete record retrieved 8e64d
+PASS complete record retrieved cc5fd
+PASS complete record retrieved 85yvj
+PASS complete record retrieved v2jbu
+PASS complete record retrieved zaz9u
+PASS complete record retrieved 24tju
+PASS complete record retrieved 9bc88
+PASS complete record retrieved c96c9
+PASS complete record retrieved x7jvy
+PASS complete record retrieved 6jvno
+PASS complete record retrieved b9752
+PASS complete record retrieved 7735f
+PASS complete record retrieved 90629
+PASS complete record retrieved 3d8af
+PASS complete record retrieved 1cc85
+PASS complete record retrieved ee349
+PASS complete record retrieved cd8b9
+PASS complete record retrieved yd20s
+PASS complete record retrieved 96d4e
+PASS complete record retrieved 60e63
+PASS complete record retrieved 8bd08
+PASS complete record retrieved 7d2c0
+PASS complete record retrieved df2e4
+PASS complete record retrieved 4mw8y
+PASS complete record retrieved 1d900
+PASS complete record retrieved 37d48
+PASS complete record retrieved 7c9d7
+PASS complete record retrieved a30b2
+PASS complete record retrieved c6748
+PASS complete record retrieved c1c13
+PASS complete record retrieved 404a0
+  probe 0: index 10, USED:v75pu
+SEARCH v75pu: found at index 10
+Complete successful search: FarmID=v75pu, Name=Adelong Farm Piggery, Species=Pigs, Lat=-32.751247, Lng=117.291214, Street Num=1, Street=Unnamed Road, Suburb=Commodine, State=WA, Postcode=6311.0, Country=Australia, Status=Open, Map=https://www.farmtransparency.org/map?location=v75pu, Profile=https://www.farmtransparency.org/facilities/v75pu-adelong-farm-piggery
+  probe 0: index 8, FREE
+PASS missing farm search: 'Farm not found: zzzzz'
+PASS duplicate FarmID: Duplicate FarmID: v75pu
+  probe 0: index 10, USED:v75pu
+DELETE v75pu: tombstone at 10, load=0.3645
+PASS deletion changes count/load
+  probe 0: index 10, DELETED
+  probe 1: index 64, FREE
+PASS search after deletion: 'Farm not found: v75pu'
+  probe 0: index 10, DELETED
+  probe 1: index 64, FREE
+PASS repeat deletion: 'Cannot delete missing farm: v75pu'
+  probe 0: index 8, FREE
+PASS missing deletion: 'Cannot delete missing farm: zzzzz'
+  probe 0: index 10, DELETED
+  probe 1: index 64, FREE
+INSERT v75pu: index=10, count=40, size=107, load=0.3738
+PASS reinsertion after deletion
+=== EXPLICIT REAL-ID COLLISION AND TOMBSTONE ===
+PASS collision pair found in actual dataset
+Both qlctx and c1c13 hash to 45
+  probe 0: index 45, FREE
+INSERT qlctx: index=45, count=1, size=53, load=0.0189
+  probe 0: index 45, USED:qlctx
+  collision: occupied by a different FarmID; use next probe
+  probe 1: index 44, FREE
+INSERT c1c13: index=44, count=2, size=53, load=0.0377
+  probe 0: index 45, USED:qlctx
+DELETE qlctx: tombstone at 45, load=0.0189
+  probe 0: index 45, DELETED
+  probe 1: index 44, USED:c1c13
+SEARCH c1c13: found at index 44
+PASS search continues beyond tombstone
+  probe 0: index 45, DELETED
+  probe 1: index 37, FREE
+INSERT qlctx: index=45, count=2, size=53, load=0.0377
+PASS tombstone reusable
+=== RECORD VALIDATION ===
+PASS invalid FarmID : FarmID must contain ASCII letters/digits only
+PASS invalid search ID: FarmID must contain ASCII letters/digits only
+PASS invalid FarmID  bad: FarmID must contain ASCII letters/digits only
+PASS invalid search ID: FarmID must contain ASCII letters/digits only
+PASS invalid FarmID bad-id: FarmID must contain ASCII letters/digits only
+PASS invalid search ID: FarmID must contain ASCII letters/digits only
+PASS invalid FarmID None: FarmID must contain ASCII letters/digits only
+PASS invalid search ID: FarmID must contain ASCII letters/digits only
+PASS invalid FarmID 123: FarmID must contain ASCII letters/digits only
+PASS invalid search ID: FarmID must contain ASCII letters/digits only
+PASS invalid FarmID é123: FarmID must contain ASCII letters/digits only
+PASS invalid search ID: FarmID must contain ASCII letters/digits only
+PASS blank farm name: Farm name must not be empty
+PASS invalid latitude bad: Coordinates must be numerical
+PASS invalid latitude None: Coordinates must be numerical
+PASS invalid latitude True: Coordinates must be numerical
+PASS invalid latitude nan: Latitude must be finite and between -90 and 90
+PASS invalid latitude inf: Latitude must be finite and between -90 and 90
+PASS invalid latitude 91: Latitude must be finite and between -90 and 90
+PASS invalid latitude -91: Latitude must be finite and between -90 and 90
+PASS invalid longitude bad: Coordinates must be numerical
+PASS invalid longitude None: Coordinates must be numerical
+PASS invalid longitude True: Coordinates must be numerical
+PASS invalid longitude nan: Longitude must be finite and between -180 and 180
+PASS invalid longitude inf: Longitude must be finite and between -180 and 180
+PASS invalid longitude 181: Longitude must be finite and between -180 and 180
+PASS invalid longitude -181: Longitude must be finite and between -180 and 180
+PASS coordinate boundary values accepted
+PASS oversized coordinate integer: Coordinates must be numerical
+PASS invalid table record: Insert requires a validated FarmRecord
+HASH TESTS PASSED

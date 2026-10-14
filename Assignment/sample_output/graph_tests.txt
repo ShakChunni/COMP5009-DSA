@@ -1,0 +1,207 @@
+After 10 successful insertions: load factor=0.1887 (10/53)
+After 20 successful insertions: load factor=0.3774 (20/53)
+After 30 successful insertions: load factor=0.5660 (30/53)
+After 40 successful insertions: load factor=0.3738 (40/107)
+=== REQUIRED DATASET GRAPH ===
+Vertices: 41 Edges: 55
+HUB -> v75pu (199.07 min), cc5fd (137.15 min), 7735f (169.92 min), 7d2c0 (2416.20 min)
+v75pu -> HUB (199.07 min), h9cp1 (179.19 min), qlctx (183.63 min)
+h9cp1 -> v75pu (179.19 min), qlctx (337.14 min)
+qlctx -> h9cp1 (337.14 min), 58yzc (200.78 min), v75pu (183.63 min)
+58yzc -> qlctx (200.78 min), fzccd (291.18 min), g4q82 (231.03 min)
+fzccd -> 58yzc (291.18 min), g4q82 (113.87 min)
+g4q82 -> fzccd (113.87 min), gslqa (769.32 min), 58yzc (231.03 min)
+gslqa -> g4q82 (769.32 min), c81cd (618.64 min), 735d4 (393.69 min)
+c81cd -> gslqa (618.64 min), 735d4 (225.58 min)
+735d4 -> c81cd (225.58 min), 8e64d (307.10 min), gslqa (393.69 min)
+8e64d -> 735d4 (307.10 min), cc5fd (273.91 min), 85yvj (230.43 min)
+cc5fd -> 8e64d (273.91 min), 85yvj (503.86 min), HUB (137.15 min)
+85yvj -> cc5fd (503.86 min), v2jbu (344.92 min), 8e64d (230.43 min)
+v2jbu -> 85yvj (344.92 min), zaz9u (315.28 min), 24tju (116.09 min)
+zaz9u -> v2jbu (315.28 min), 24tju (268.11 min)
+24tju -> zaz9u (268.11 min), 9bc88 (174.79 min), v2jbu (116.09 min)
+9bc88 -> 24tju (174.79 min), c96c9 (209.31 min), x7jvy (188.30 min)
+c96c9 -> 9bc88 (209.31 min), x7jvy (392.22 min)
+x7jvy -> c96c9 (392.22 min), 6jvno (298.08 min), 9bc88 (188.30 min)
+6jvno -> x7jvy (298.08 min), b9752 (2358.91 min), 7735f (31.40 min)
+b9752 -> 6jvno (2358.91 min), 7735f (2369.93 min)
+7735f -> b9752 (2369.93 min), 90629 (126.05 min), HUB (169.92 min), 6jvno (31.40 min)
+90629 -> 7735f (126.05 min), 3d8af (146.98 min), 1cc85 (119.30 min)
+3d8af -> 90629 (146.98 min), 1cc85 (188.27 min)
+1cc85 -> 3d8af (188.27 min), ee349 (346.73 min), 90629 (119.30 min)
+ee349 -> 1cc85 (346.73 min), cd8b9 (2201.46 min), yd20s (445.24 min)
+cd8b9 -> ee349 (2201.46 min), yd20s (2098.79 min)
+yd20s -> cd8b9 (2098.79 min), 96d4e (235.26 min), ee349 (445.24 min)
+96d4e -> yd20s (235.26 min), 60e63 (265.90 min), 8bd08 (426.16 min)
+60e63 -> 96d4e (265.90 min), 8bd08 (369.92 min)
+8bd08 -> 60e63 (369.92 min), 7d2c0 (2576.40 min), 96d4e (426.16 min)
+7d2c0 -> 8bd08 (2576.40 min), df2e4 (2610.53 min), HUB (2416.20 min), 4mw8y (2506.61 min)
+df2e4 -> 7d2c0 (2610.53 min), 4mw8y (130.47 min)
+4mw8y -> df2e4 (130.47 min), 1d900 (96.00 min), 7d2c0 (2506.61 min)
+1d900 -> 4mw8y (96.00 min), 37d48 (55.66 min), 7c9d7 (367.91 min)
+37d48 -> 1d900 (55.66 min), 7c9d7 (420.10 min)
+7c9d7 -> 37d48 (420.10 min), a30b2 (1.84 min), 1d900 (367.91 min)
+a30b2 -> 7c9d7 (1.84 min), c6748 (1.95 min), c1c13 (1.40 min)
+c6748 -> a30b2 (1.95 min), c1c13 (3.33 min)
+c1c13 -> c6748 (3.33 min), a30b2 (1.40 min)
+404a0 -> (isolated)
+
+BFS from HUB:
+Level 0: HUB
+Level 1: v75pu, cc5fd, 7735f, 7d2c0
+Level 2: h9cp1, qlctx, 8e64d, 85yvj, b9752, 90629, 6jvno, 8bd08, df2e4, 4mw8y
+Level 3: 58yzc, 735d4, v2jbu, 3d8af, 1cc85, x7jvy, 60e63, 96d4e, 1d900
+Level 4: fzccd, g4q82, c81cd, gslqa, zaz9u, 24tju, ee349, c96c9, 9bc88, yd20s, 37d48, 7c9d7
+Level 5: cd8b9, a30b2
+Level 6: c6748, c1c13
+DFS visit order (all components): [HUB, v75pu, h9cp1, qlctx, 58yzc, fzccd, g4q82, gslqa, c81cd, 735d4, 8e64d, cc5fd, 85yvj, v2jbu, zaz9u, 24tju, 9bc88, c96c9, x7jvy, 6jvno, b9752, 7735f, 90629, 3d8af, 1cc85, ee349, cd8b9, yd20s, 96d4e, 60e63, 8bd08, 7d2c0, df2e4, 4mw8y, 1d900, 37d48, 7c9d7, a30b2, c6748, c1c13, 404a0]
+Cycle exists: True Detected cycle: [a30b2, c6748, c1c13, a30b2]
+PASS required graph size
+PASS dataset graph contains a cycle
+PASS DFS includes every component
+PASS deliberately isolated farm
+Dijkstra farm -> hub: path=[v75pu, HUB], shortest time=199.07 min
+Unreachable 404a0: no valid route (time=inf, path=[])
+PASS unreachable destination
+PASS BFS excludes isolated farm
+PASS undirected positive edge HUB->v75pu
+PASS undirected positive edge HUB->cc5fd
+PASS undirected positive edge HUB->7735f
+PASS undirected positive edge HUB->7d2c0
+PASS undirected positive edge v75pu->HUB
+PASS undirected positive edge v75pu->h9cp1
+PASS undirected positive edge v75pu->qlctx
+PASS undirected positive edge h9cp1->v75pu
+PASS undirected positive edge h9cp1->qlctx
+PASS undirected positive edge qlctx->h9cp1
+PASS undirected positive edge qlctx->58yzc
+PASS undirected positive edge qlctx->v75pu
+PASS undirected positive edge 58yzc->qlctx
+PASS undirected positive edge 58yzc->fzccd
+PASS undirected positive edge 58yzc->g4q82
+PASS undirected positive edge fzccd->58yzc
+PASS undirected positive edge fzccd->g4q82
+PASS undirected positive edge g4q82->fzccd
+PASS undirected positive edge g4q82->gslqa
+PASS undirected positive edge g4q82->58yzc
+PASS undirected positive edge gslqa->g4q82
+PASS undirected positive edge gslqa->c81cd
+PASS undirected positive edge gslqa->735d4
+PASS undirected positive edge c81cd->gslqa
+PASS undirected positive edge c81cd->735d4
+PASS undirected positive edge 735d4->c81cd
+PASS undirected positive edge 735d4->8e64d
+PASS undirected positive edge 735d4->gslqa
+PASS undirected positive edge 8e64d->735d4
+PASS undirected positive edge 8e64d->cc5fd
+PASS undirected positive edge 8e64d->85yvj
+PASS undirected positive edge cc5fd->8e64d
+PASS undirected positive edge cc5fd->85yvj
+PASS undirected positive edge cc5fd->HUB
+PASS undirected positive edge 85yvj->cc5fd
+PASS undirected positive edge 85yvj->v2jbu
+PASS undirected positive edge 85yvj->8e64d
+PASS undirected positive edge v2jbu->85yvj
+PASS undirected positive edge v2jbu->zaz9u
+PASS undirected positive edge v2jbu->24tju
+PASS undirected positive edge zaz9u->v2jbu
+PASS undirected positive edge zaz9u->24tju
+PASS undirected positive edge 24tju->zaz9u
+PASS undirected positive edge 24tju->9bc88
+PASS undirected positive edge 24tju->v2jbu
+PASS undirected positive edge 9bc88->24tju
+PASS undirected positive edge 9bc88->c96c9
+PASS undirected positive edge 9bc88->x7jvy
+PASS undirected positive edge c96c9->9bc88
+PASS undirected positive edge c96c9->x7jvy
+PASS undirected positive edge x7jvy->c96c9
+PASS undirected positive edge x7jvy->6jvno
+PASS undirected positive edge x7jvy->9bc88
+PASS undirected positive edge 6jvno->x7jvy
+PASS undirected positive edge 6jvno->b9752
+PASS undirected positive edge 6jvno->7735f
+PASS undirected positive edge b9752->6jvno
+PASS undirected positive edge b9752->7735f
+PASS undirected positive edge 7735f->b9752
+PASS undirected positive edge 7735f->90629
+PASS undirected positive edge 7735f->HUB
+PASS undirected positive edge 7735f->6jvno
+PASS undirected positive edge 90629->7735f
+PASS undirected positive edge 90629->3d8af
+PASS undirected positive edge 90629->1cc85
+PASS undirected positive edge 3d8af->90629
+PASS undirected positive edge 3d8af->1cc85
+PASS undirected positive edge 1cc85->3d8af
+PASS undirected positive edge 1cc85->ee349
+PASS undirected positive edge 1cc85->90629
+PASS undirected positive edge ee349->1cc85
+PASS undirected positive edge ee349->cd8b9
+PASS undirected positive edge ee349->yd20s
+PASS undirected positive edge cd8b9->ee349
+PASS undirected positive edge cd8b9->yd20s
+PASS undirected positive edge yd20s->cd8b9
+PASS undirected positive edge yd20s->96d4e
+PASS undirected positive edge yd20s->ee349
+PASS undirected positive edge 96d4e->yd20s
+PASS undirected positive edge 96d4e->60e63
+PASS undirected positive edge 96d4e->8bd08
+PASS undirected positive edge 60e63->96d4e
+PASS undirected positive edge 60e63->8bd08
+PASS undirected positive edge 8bd08->60e63
+PASS undirected positive edge 8bd08->7d2c0
+PASS undirected positive edge 8bd08->96d4e
+PASS undirected positive edge 7d2c0->8bd08
+PASS undirected positive edge 7d2c0->df2e4
+PASS undirected positive edge 7d2c0->HUB
+PASS undirected positive edge 7d2c0->4mw8y
+PASS undirected positive edge df2e4->7d2c0
+PASS undirected positive edge df2e4->4mw8y
+PASS undirected positive edge 4mw8y->df2e4
+PASS undirected positive edge 4mw8y->1d900
+PASS undirected positive edge 4mw8y->7d2c0
+PASS undirected positive edge 1d900->4mw8y
+PASS undirected positive edge 1d900->37d48
+PASS undirected positive edge 1d900->7c9d7
+PASS undirected positive edge 37d48->1d900
+PASS undirected positive edge 37d48->7c9d7
+PASS undirected positive edge 7c9d7->37d48
+PASS undirected positive edge 7c9d7->a30b2
+PASS undirected positive edge 7c9d7->1d900
+PASS undirected positive edge a30b2->7c9d7
+PASS undirected positive edge a30b2->c6748
+PASS undirected positive edge a30b2->c1c13
+PASS undirected positive edge c6748->a30b2
+PASS undirected positive edge c6748->c1c13
+PASS undirected positive edge c1c13->c6748
+PASS undirected positive edge c1c13->a30b2
+=== SMALL INDEPENDENT GRAPH FIXTURE ===
+Known shortest path: [A, C, B, D, E] time: 7.0
+PASS Dijkstra beats direct expensive edges
+PASS BFS grouped levels
+PASS same source and destination
+PASS isolated BFS
+PASS duplicate location: Duplicate location: A
+PASS duplicate reversed edge: Duplicate undirected edge
+PASS self-edge: Self-connections are not supported
+PASS unknown vertex: 'Location not found: MISSING'
+PASS empty vertex label: Location label must be a non-empty string
+PASS invalid BFS source: 'Location not found: MISSING'
+PASS invalid DFS source: 'Location not found: MISSING'
+PASS invalid Dijkstra destination: 'Location not found: MISSING'
+PASS invalid edge weight 0: Transportation time must be positive and finite
+PASS invalid edge weight -1: Transportation time must be positive and finite
+PASS invalid edge weight bad: Transportation time must be numerical
+PASS invalid edge weight nan: Transportation time must be positive and finite
+PASS invalid edge weight inf: Transportation time must be positive and finite
+PASS invalid edge weight True: Transportation time must be numerical
+PASS invalid edge weight None: Transportation time must be numerical
+PASS empty graph source: 'Location not found: A'
+PASS oversized integer weight: Transportation time must be numerical
+PASS overflowing path total is not reported as unreachable: Transportation-time total exceeds the finite numerical range
+PASS irrelevant overflow does not hide finite shortest route
+PASS unreachable stays unreachable despite overflow elsewhere
+PASS tree parent edge is not a cycle
+Cycle in disconnected component: [F, G, H, F]
+PASS disconnected component cycle detected
+PASS iterative DFS handles 1100-vertex path
+GRAPH TESTS PASSED

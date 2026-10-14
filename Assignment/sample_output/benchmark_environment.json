@@ -1,0 +1,14 @@
+{
+  "seed": 5008,
+  "repetitions": 7,
+  "python": "3.14.3",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "processor": "arm",
+  "timer": "time.perf_counter_ns",
+  "farm_records": 40,
+  "vertices": 41,
+  "edges": 55,
+  "dataset_generation_timed": false,
+  "input_copy_timed": false,
+  "verification_timed": false
+}

@@ -1,0 +1,19 @@
+Records,Condition,Algorithm,Repetitions,MeanMilliseconds
+100,random,Merge Sort,7,0.04381557142857143
+100,random,Quick Sort,7,0.034815285714285715
+100,nearly_sorted,Merge Sort,7,0.039862999999999996
+100,nearly_sorted,Quick Sort,7,0.02829757142857143
+100,reversed,Merge Sort,7,0.04129157142857143
+100,reversed,Quick Sort,7,0.029101142857142857
+500,random,Merge Sort,7,0.28775
+500,random,Quick Sort,7,0.21075000000000002
+500,nearly_sorted,Merge Sort,7,0.268875
+500,nearly_sorted,Quick Sort,7,0.19306542857142855
+500,reversed,Merge Sort,7,0.25823214285714285
+500,reversed,Quick Sort,7,0.19642857142857142
+1000,random,Merge Sort,7,0.6677441428571428
+1000,random,Quick Sort,7,0.4580652857142857
+1000,nearly_sorted,Merge Sort,7,0.6506907142857142
+1000,nearly_sorted,Quick Sort,7,0.4232677142857143
+1000,reversed,Merge Sort,7,0.5938452857142857
+1000,reversed,Quick Sort,7,0.40566057142857137

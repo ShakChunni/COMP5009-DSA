@@ -1,0 +1,22 @@
+After 10 successful insertions: load factor=0.1887 (10/53)
+After 20 successful insertions: load factor=0.3774 (20/53)
+After 30 successful insertions: load factor=0.5660 (30/53)
+After 40 successful insertions: load factor=0.3738 (40/107)
+PASS missing farm headers: Farm CSV is missing required column headers
+PASS empty farm CSV: Farm CSV is missing required column headers
+PASS missing farm file: [Errno 2] No such file or directory: '/var/folders/2m/n7z0q4wn1r38x8r3yb0k4w6m0000gn/T/comp5008_input_8787soxj/missing.csv'
+PASS truncated farm row: Farm CSV line 2: Farm CSV row has missing columns
+PASS invalid coordinate in farm CSV: Farm CSV line 2: Coordinates must be numerical
+PASS missing edge headers: Edge CSV is missing required headers
+PASS invalid edge endpoint in CSV: Edge CSV line 2: 'Location not found: MISSING'
+PASS missing request headers: Request CSV is missing required headers
+REJECTED request CSV line 2: FarmID must contain ASCII letters/digits only
+PRIORITY GOOD: 10.00 / 199.07 = 0.050234
+HEAP after insertion: [GOOD:0.050234]
+PASS request loader continues after truncated row
+PASS all menu options work from an isolated extracted package
+PASS menu exports complete sorted accepted history
+PASS CSV parser errors are handled and menu continues
+PASS menu rejects input and continues
+PASS menu EOF cleanly exits
+INPUT AND MENU TESTS PASSED
